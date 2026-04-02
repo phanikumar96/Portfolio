@@ -1,5 +1,5 @@
 
-##### <a href="https://phanikumar96.github.io/Portfolio" target="_blank">Dr. Phani Siginamsetty</a>
+##### Dr. Phani Siginamsetty
 PhD-Qualified Data Scientist & AI Engineer
 Specializing in Agentic AI, Multi-Agent Systems, and Enterprise RAG Pipelines.
 I am an AI Researcher and Engineer with 5+ years of experience bridging the gap between cutting-edge academic research and enterprise-grade production systems. Currently at Hexaware Technologies, I focus on building autonomous Multi-Agent Systems where LLM-powered agents collaborate to solve complex, real-world workflows end-to-end.
