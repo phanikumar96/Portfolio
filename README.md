@@ -16,6 +16,66 @@ I am an AI Researcher and Engineer with 5+ years of experience bridging the gap 
 * Machine Learning: Computer Vision Diagnostics, Fraud Detection, and Predictive Analytics.
 * Infrastructure: AWS (Bedrock, S3, RDS), Vector Databases (Pinecone, MongoDB), and FastAPI.
 
+
+## 🛠️ Technical Expertise
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <br />
+      <b>🤖 Agentic & GenAI</b>
+      <br />
+      <sub>CrewAI • LangGraph • Agno</sub>
+      <br />
+      <sub>RAG Pipelines • Tool-Calling</sub>
+    </td>
+    <td align="center" width="33%">
+      <br />
+      <b>🧠 LLM & NLP</b>
+      <br />
+      <sub>Llama 3 • Claude • Bedrock</sub>
+      <br />
+      <sub>Fine-Tuning (QLoRA) • PEFT</sub>
+    </td>
+    <td align="center" width="33%">
+      <br />
+      <b>📊 Data Science</b>
+      <br />
+      <sub>XGBoost • PyTorch • OpenCV</sub>
+      <br />
+      <sub>Forensics • Computer Vision</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <br />
+      <b>☁️ Cloud & DevOps</b>
+      <br />
+      <sub>AWS (S3/RDS) • MLOps</sub>
+      <br />
+      <sub>FastAPI • Docker • asyncio</sub>
+    </td>
+    <td align="center" width="33%">
+      <br />
+      <b>💾 Databases</b>
+      <br />
+      <sub>Pinecone • MongoDB</sub>
+      <br />
+      <sub>PostgreSQL • Titan Embed</sub>
+    </td>
+    <td align="center" width="33%">
+      <br />
+      <b>📜 IP & Research</b>
+      <br />
+      <sub>11 Patents • 7 Publications</sub>
+      <br />
+      <sub>Quantum-AI • Multilingual NLP</sub>
+    </td>
+  </tr>
+</table>
+
+
+
 ## Resume 
 <a href="https://github.com/phanikumar96/Portfolio/blob/main/Phani_Siginamsetty_ResumeV1.pdf" target="_blank">
   Phani Resume Data Scientist
