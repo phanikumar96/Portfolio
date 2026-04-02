@@ -1,422 +1,870 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Phani Siginamsetty | AI Dashboard</title>
+  <title>Dr. Phani Siginamsetty — AI & Data Science</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="dark-dashboard">
+<body>
 
-  <!-- Fixed Sidebar Navigation -->
-  <aside class="sidebar">
-    <div class="sidebar-profile">
-      <div class="avatar">
-        <span class="initials">PS</span>
-      </div>
-      <h1 class="name">Dr. Phani Siginamsetty</h1>
-      <p class="title">Associate Data Scientist</p>
-      
-      <div class="social-links">
-        <a href="mailto:siginamsettyphani@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/phani-kumar-630613101" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/phanikumar96" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://scholar.google.com/citations?user=mvFV_Edq61oC&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-      </div>
+<!-- ═══ SIDEBAR ═══════════════════════════════════════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-profile">
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar"><span class="initials">PS</span></div>
+    </div>
+    <div class="sidebar-name">Dr. Phani Siginamsetty</div>
+    <div class="sidebar-role">Data Scientist · PhD</div>
+    <div class="sidebar-location"><i class="fa-solid fa-location-dot"></i> Chennai, India</div>
+    <div class="social-links">
+      <a href="mailto:siginamsettyphani@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="tel:+918125636250" title="Phone"><i class="fa-solid fa-phone"></i></a>
+      <a href="https://linkedin.com/in/phani-kumar-630613101" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/phanikumar96" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://scholar.google.com/citations?user=mvFV_Edq61oC&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#hero"       class="nav-item active">
+      <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
+      <span class="nav-label">Home</span>
+    </a>
+    <a href="#skills"     class="nav-item">
+      <span class="nav-icon"><i class="fa-solid fa-microchip"></i></span>
+      <span class="nav-label">Skills</span>
+    </a>
+    <a href="#experience" class="nav-item">
+      <span class="nav-icon"><i class="fa-solid fa-briefcase"></i></span>
+      <span class="nav-label">Experience</span>
+    </a>
+    <a href="#projects"   class="nav-item">
+      <span class="nav-icon"><i class="fa-solid fa-code-branch"></i></span>
+      <span class="nav-label">Projects</span>
+    </a>
+    <a href="#research"   class="nav-item">
+      <span class="nav-icon"><i class="fa-solid fa-microscope"></i></span>
+      <span class="nav-label">Research & IP</span>
+    </a>
+    <a href="#education"  class="nav-item">
+      <span class="nav-icon"><i class="fa-solid fa-user-graduate"></i></span>
+      <span class="nav-label">Education</span>
+    </a>
+    <a href="#resume"     class="nav-item">
+      <span class="nav-icon"><i class="fa-solid fa-file-pdf"></i></span>
+      <span class="nav-label">Resume</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">siginamsettyphani@gmail.com</div>
+</aside>
+
+<!-- Mobile header -->
+<header class="mobile-header">
+  <span class="mobile-brand">Dr. Phani S.</span>
+  <button class="mobile-menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+</header>
+
+<!-- ═══ MAIN ═══════════════════════════════════════════════ -->
+<main class="main">
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section id="hero" class="hero reveal">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-eyebrow">Associate Data Scientist · Hexaware Technologies · Chennai, India</div>
+
+    <h1 class="hero-name">
+      Dr. Phani<br>
+      <span class="grad">Siginamsetty</span>
+    </h1>
+
+    <div class="hero-roles">
+      <span class="role-static">I build</span>
+      <span class="role-typed" id="typedRole">Autonomous AI Agents</span>
     </div>
 
-    <nav class="sidebar-nav">
-      <a href="#overview" class="nav-item active"><i class="fa-solid fa-house"></i> Overview</a>
-      <a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> Experience</a>
-      <a href="#projects" class="nav-item"><i class="fa-solid fa-code-branch"></i> Projects</a>
-      <a href="#research" class="nav-item"><i class="fa-solid fa-microscope"></i> Research & IP</a>
-      <a href="#education" class="nav-item"><i class="fa-solid fa-user-graduate"></i> Education</a>
-      <a href="#resume" class="nav-item"><i class="fa-solid fa-file-pdf"></i> Resume Preview</a>
-    </nav>
-  </aside>
+    <p class="hero-subtitle">
+      PhD-qualified Data Scientist and AI Engineer with 5+ years bridging cutting-edge academic research with enterprise-grade production systems.
+      Expert in designing autonomous Multi-Agent Systems — where LLM-powered agents plan, reason, use tools, and collaborate to solve complex real-world workflows end-to-end.
+      Deep hands-on experience across the full AI lifecycle: from RAG pipeline architecture and LLM fine-tuning (PEFT/QLoRA) to quantized edge deployment, MLOps, and scalable cloud infrastructure on AWS.
+      Proven ability to translate research breakthroughs in multilingual NLP, multimodal AI, and quantum-motivated algorithms into production-ready systems — backed by 11 patents and 7 peer-reviewed publications in Elsevier, IEEE, and Springer.
+      Passionate about building intelligent systems that are not just accurate, but autonomous, explainable, and deployable at scale.
+    </p>
 
-  <!-- Mobile Header (Visible only on small screens) -->
-  <header class="mobile-header">
-    <div class="brand">Dr. Phani Siginamsetty</div>
-    <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
-  </header>
+    <div class="hero-tags">
+      <span class="hero-tag"><i class="fa-solid fa-robot"></i> Agentic AI</span>
+      <span class="hero-tag"><i class="fa-solid fa-network-wired"></i> Multi-Agent Systems</span>
+      <span class="hero-tag"><i class="fa-solid fa-brain"></i> Generative AI</span>
+      <span class="hero-tag"><i class="fa-solid fa-magnifying-glass-chart"></i> RAG Pipelines</span>
+      <span class="hero-tag"><i class="fa-solid fa-sliders"></i> LLM Fine-Tuning</span>
+      <span class="hero-tag"><i class="fa-solid fa-chart-line"></i> Data Science</span>
+      <span class="hero-tag"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+      <span class="hero-tag"><i class="fa-solid fa-language"></i> NLP Research</span>
+      <span class="hero-tag"><i class="fa-solid fa-cloud"></i> MLOps · AWS</span>
+      <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Edge AI</span>
+      <span class="hero-tag"><i class="fa-solid fa-code-branch"></i> LangGraph · CrewAI</span>
+      <span class="hero-tag"><i class="fa-solid fa-database"></i> Vector Databases</span>
+      <span class="hero-tag"><i class="fa-solid fa-flask"></i> AI Research</span>
+      <span class="hero-tag"><i class="fa-solid fa-certificate"></i> 11 Patents</span>
+      <span class="hero-tag"><i class="fa-solid fa-book-open"></i> 7 Publications</span>
+    </div>
 
-  <!-- Main Dashboard Content Area -->
-  <main class="dashboard-content">
-    
-    <!-- SECTION: OVERVIEW -->
-    <section id="overview" class="dashboard-section fade-in">
-      <header class="section-header">
-        <h2>Dashboard Overview</h2>
-        <span class="status"><i class="fa-solid fa-circle-dot blink-green"></i> Open to Opportunities</span>
-      </header>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary"><i class="fa-solid fa-code-branch"></i> View Projects</a>
+      <a href="#resume"   class="btn-secondary"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+      <a href="mailto:siginamsettyphani@gmail.com" class="btn-secondary"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </div>
 
-      <!-- KPI Metric Cards -->
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <i class="fa-solid fa-certificate metric-icon blue"></i>
-          <div class="metric-data">
-            <span class="counter" data-target="11">0</span>
-            <span class="metric-label">Patents Filed</span>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num" data-count="11">0</div>
+        <div class="hero-stat-label">Patents Filed</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="3">0</div>
+        <div class="hero-stat-label">Granted Patents</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="7">0</div>
+        <div class="hero-stat-label">Publications</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">9.25</div>
+        <div class="hero-stat-label">PhD CGPA</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="5">0</div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────────── -->
+  <section id="skills" class="section reveal">
+    <div class="section-label"><span>Technical Expertise</span></div>
+    <h2 class="section-title">Skills & Stack</h2>
+    <p class="section-desc">Full-spectrum ML/AI stack — click any category to expand.</p>
+
+    <div class="skills-layout">
+
+      <div class="skill-row open" data-cat="genai">
+        <div class="skill-row-header">
+          <div class="skill-row-icon"><i class="fa-solid fa-robot"></i></div>
+          <div class="skill-row-info">
+            <div class="skill-row-title">GenAI & Agentic Frameworks</div>
+            <div class="skill-row-count">11 technologies</div>
           </div>
+          <div class="skill-row-accent"></div>
+          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
         </div>
-        <div class="metric-card">
-          <i class="fa-solid fa-book-open metric-icon purple"></i>
-          <div class="metric-data">
-            <span class="counter" data-target="7">0</span>
-            <span class="metric-label">Publications</span>
-          </div>
-        </div>
-        <div class="metric-card">
-          <i class="fa-solid fa-check-double metric-icon green"></i>
-          <div class="metric-data">
-            <span class="counter" data-target="3">0</span>
-            <span class="metric-label">Granted Patents</span>
-          </div>
-        </div>
-        <div class="metric-card">
-          <i class="fa-solid fa-star metric-icon yellow"></i>
-          <div class="metric-data">
-            <span>9.25</span>
-            <span class="metric-label">Ph.D. CGPA</span>
+        <div class="skill-row-body">
+          <div class="skill-pills">
+            <span class="skill-pill">CrewAI</span><span class="skill-pill">AutoGen</span><span class="skill-pill">LangGraph</span><span class="skill-pill">Agno</span><span class="skill-pill">PydanticAI</span><span class="skill-pill">Haystack</span><span class="skill-pill">Tool-Calling</span><span class="skill-pill">Semantic Routing</span><span class="skill-pill">HITL</span><span class="skill-pill">Ragas</span><span class="skill-pill">TruLens</span>
           </div>
         </div>
       </div>
 
-      <div class="bento-grid mt-4">
-        <!-- Summary Widget -->
-        <div class="widget col-span-2">
-          <h3><i class="fa-solid fa-user-astronaut"></i> Professional Summary</h3>
-          <p class="summary-text text-secondary">
-            Associate Data Scientist and PhD Researcher specializing in Generative AI, Machine Learning, and autonomous Multi-Agent Systems. Proven track record of bridging academic research with high-impact enterprise solutions, focusing on orchestration frameworks where autonomous agents execute complex workflows. Deep expertise in end-to-end LLM lifecycle management, including RAG pipelines, fine-tuning (PEFT/LoRA), and quantized edge deployment.
-          </p>
+      <div class="skill-row" data-cat="llm">
+        <div class="skill-row-header">
+          <div class="skill-row-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="skill-row-info">
+            <div class="skill-row-title">LLMs & Model Engineering</div>
+            <div class="skill-row-count">12 technologies</div>
+          </div>
+          <div class="skill-row-accent"></div>
+          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
         </div>
-
-        <!-- Skills Widget -->
-        <div class="widget col-span-2">
-          <h3><i class="fa-solid fa-microchip"></i> Technical Stack</h3>
-          <div class="skills-container">
-            <div class="skill-category">
-              <h4>GenAI & Agentic Frameworks</h4>
-              <div class="tags"><span>Multi-Agent Orchestration</span><span>CrewAI</span><span>AutoGen</span><span>LangGraph</span><span>Agno</span><span>PydanticAI</span><span>Haystack</span><span>Tool-Function Calling</span><span>Semantic Routing</span><span>HITL</span><span>Ragas</span><span>TruLens</span></div>
-            </div>
-            <div class="skill-category">
-              <h4>LLMs & Model Engineering</h4>
-              <div class="tags"><span>AWS Bedrock</span><span>Llama 3.2</span><span>GPT-4o</span><span>PEFT</span><span>QLoRA</span><span>Unsloth</span><span>TRL (DPO/RLHF)</span><span>DeepSpeed</span><span>FSDP</span><span>GGUF</span><span>AWQ</span><span>GPTQ</span></div>
-            </div>
-            <div class="skill-category">
-              <h4>Data Science & Advanced ML</h4>
-              <div class="tags"><span>PyTorch</span><span>Scikit-Learn</span><span>RL (PPO, DQN)</span><span>Time-Series</span><span>XGBoost</span><span>Random Forest</span><span>Siamese Networks</span><span>AutoML</span><span>Quantum-Motivated Algorithms</span></div>
-            </div>
-            <div class="skill-category">
-              <h4>Vision & Multimodal AI</h4>
-              <div class="tags"><span>Multimodal RAG</span><span>OpenCV</span><span>AWS Textract (OCR)</span><span>Document Intelligence</span><span>OpenAI Whisper (ASR)</span><span>ElevenLabs (TTS)</span><span>CLIP</span><span>Image & Audio Processing</span></div>
-            </div>
-            <div class="skill-category">
-              <h4>MLOps, Cloud & Infrastructure</h4>
-              <div class="tags"><span class="expert">Python (Expert)</span><span>AWS (SageMaker, Bedrock, Lambda, EC2)</span><span>Docker</span><span>Kubernetes</span><span>CI/CD</span><span>FastAPI</span><span>Flask</span><span>RESTful APIs</span><span>Vector DBs (Pinecone, Milvus, Weaviate, Chroma, FAISS)</span><span>MongoDB</span><span>Spark</span><span>Parquet</span></div>
-            </div>
+        <div class="skill-row-body">
+          <div class="skill-pills">
+            <span class="skill-pill">AWS Bedrock</span><span class="skill-pill">Llama 3.2</span><span class="skill-pill">GPT-4o</span><span class="skill-pill">PEFT</span><span class="skill-pill">QLoRA</span><span class="skill-pill">Unsloth</span><span class="skill-pill">DPO/RLHF</span><span class="skill-pill">DeepSpeed</span><span class="skill-pill">FSDP</span><span class="skill-pill">GGUF</span><span class="skill-pill">AWQ</span><span class="skill-pill">GPTQ</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION: EXPERIENCE -->
-    <section id="experience" class="dashboard-section fade-in">
-      <header class="section-header">
-        <h2>Work Experience</h2>
-      </header>
-      
-      <div class="timeline-widget">
-        
-        <div class="timeline-item">
-          <div class="timeline-header">
+      <div class="skill-row" data-cat="ml">
+        <div class="skill-row-header">
+          <div class="skill-row-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="skill-row-info">
+            <div class="skill-row-title">Data Science & Advanced ML</div>
+            <div class="skill-row-count">9 technologies</div>
+          </div>
+          <div class="skill-row-accent"></div>
+          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+        </div>
+        <div class="skill-row-body">
+          <div class="skill-pills">
+            <span class="skill-pill">PyTorch</span><span class="skill-pill">Scikit-Learn</span><span class="skill-pill">RL (PPO, DQN)</span><span class="skill-pill">Time-Series</span><span class="skill-pill">XGBoost</span><span class="skill-pill">Random Forest</span><span class="skill-pill">Siamese Networks</span><span class="skill-pill">AutoML</span><span class="skill-pill">Quantum-Motivated Algorithms</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-row" data-cat="vision">
+        <div class="skill-row-header">
+          <div class="skill-row-icon"><i class="fa-solid fa-eye"></i></div>
+          <div class="skill-row-info">
+            <div class="skill-row-title">Vision & Multimodal AI</div>
+            <div class="skill-row-count">8 technologies</div>
+          </div>
+          <div class="skill-row-accent"></div>
+          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+        </div>
+        <div class="skill-row-body">
+          <div class="skill-pills">
+            <span class="skill-pill">Multimodal RAG</span><span class="skill-pill">OpenCV</span><span class="skill-pill">AWS Textract</span><span class="skill-pill">Document Intelligence</span><span class="skill-pill">Whisper (ASR)</span><span class="skill-pill">ElevenLabs (TTS)</span><span class="skill-pill">CLIP</span><span class="skill-pill">Image & Audio Processing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-row" data-cat="mlops">
+        <div class="skill-row-header">
+          <div class="skill-row-icon"><i class="fa-brands fa-aws"></i></div>
+          <div class="skill-row-info">
+            <div class="skill-row-title">MLOps, Cloud & Backend</div>
+            <div class="skill-row-count">11 technologies</div>
+          </div>
+          <div class="skill-row-accent"></div>
+          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+        </div>
+        <div class="skill-row-body">
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span><span class="skill-pill">AWS SageMaker</span><span class="skill-pill">AWS Lambda</span><span class="skill-pill">AWS EC2</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">CI/CD</span><span class="skill-pill">FastAPI</span><span class="skill-pill">Flask</span><span class="skill-pill">JWT/RBAC</span><span class="skill-pill">Optuna</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-row" data-cat="data">
+        <div class="skill-row-header">
+          <div class="skill-row-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="skill-row-info">
+            <div class="skill-row-title">Data Infrastructure & Vector DBs</div>
+            <div class="skill-row-count">11 technologies</div>
+          </div>
+          <div class="skill-row-accent"></div>
+          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+        </div>
+        <div class="skill-row-body">
+          <div class="skill-pills">
+            <span class="skill-pill">Pinecone</span><span class="skill-pill">Milvus</span><span class="skill-pill">Weaviate</span><span class="skill-pill">Chroma</span><span class="skill-pill">FAISS</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Spark</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">Parquet</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ─────────────────────────────────────────── -->
+  <section id="experience" class="section reveal">
+    <div class="section-label"><span>Career</span></div>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-desc">5+ years across industry research, enterprise AI, and academia.</p>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-top">
             <div>
-              <h3 class="role">Associate Data Scientist</h3>
-              <span class="company"><i class="fa-solid fa-building"></i> Hexaware Technologies</span>
+              <div class="tl-role">Associate Data Scientist</div>
+              <div class="tl-company"><i class="fa-solid fa-building"></i> Hexaware Technologies <span class="tl-loc">· Chennai, India</span></div>
             </div>
-            <span class="date-badge">March 2025 – Present</span>
+            <span class="tl-date">Mar 2025 – Present</span>
           </div>
-          <ul class="bullet-list">
-            <li><strong>Autonomous Fraud Detection:</strong> Spearheading real-time fraud detection using stateful multi-agent systems via the <strong>Agno</strong> framework with advanced tool-calling for complex transaction analysis.</li>
+          <ul class="tl-list">
+            <li><strong>Autonomous Fraud Detection:</strong> Spearheading real-time fraud detection using stateful multi-agent systems via the Agno framework with advanced tool-calling for complex transaction analysis.</li>
             <li><strong>Advanced RAG Pipelines:</strong> Engineering a multi-agent RAG pipeline for "Smart Tutor" using vector databases and semantic routing to deliver personalized content while minimizing hallucinations.</li>
             <li><strong>Enterprise Automation:</strong> Designing agentic workflows with LangChain and LangGraph to automate reporting with Human-in-the-Loop (HITL) mechanisms, reducing operational overhead.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-top">
             <div>
-              <h3 class="role">Research Assistant</h3>
-              <span class="company"><i class="fa-solid fa-car"></i> Volvo Group</span>
+              <div class="tl-role">Research Assistant</div>
+              <div class="tl-company"><i class="fa-solid fa-car"></i> Volvo Group <span class="tl-loc">· Bangalore, India</span></div>
             </div>
-            <span class="date-badge">June 2024 – March 2025</span>
+            <span class="tl-date">Jun 2024 – Mar 2025</span>
           </div>
-          <ul class="bullet-list">
+          <ul class="tl-list">
             <li><strong>Edge GenAI & Quantization:</strong> Researched lightweight LLMs for on-device inference using GGUF/AWQ quantization to reduce memory footprint and latency on vehicular hardware.</li>
             <li><strong>Computer Vision Diagnostics:</strong> Deployed an optimized CNN pipeline for real-time component recognition within the Vehicle Configuration Manager (VCM) to automate visual inspections.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-top">
             <div>
-              <h3 class="role">Data Science Researcher (PhD Scholar)</h3>
-              <span class="company"><i class="fa-solid fa-university"></i> SRM University AP</span>
+              <div class="tl-role">Data Science Researcher (PhD Scholar)</div>
+              <div class="tl-company"><i class="fa-solid fa-university"></i> SRM University AP <span class="tl-loc">· Amaravati, India</span></div>
             </div>
-            <span class="date-badge">Sep 2021 – July 2024</span>
+            <span class="tl-date">Sep 2021 – Jul 2024</span>
           </div>
-          <ul class="bullet-list">
-            <li><strong>Healthcare AI Consultant:</strong> Architected a secure RAG chatbot for SRM Global Hospital to retrieve medical protocols while ensuring strict data privacy and proprietary data embedding.</li>
-            <li><strong>Audio Intelligence:</strong> Engineered a MoM automation API using <strong>FastAPI</strong>, STT, and speaker diarization to autonomously extract abstractive summaries and action items from recordings.</li>
+          <ul class="tl-list">
+            <li><strong>Healthcare AI:</strong> Architected a secure RAG chatbot for SRM Global Hospital to retrieve medical protocols while ensuring strict data privacy and proprietary data embedding.</li>
+            <li><strong>Audio Intelligence:</strong> Engineered a MoM automation API using FastAPI, STT, and speaker diarization to autonomously extract abstractive summaries and action items from recordings.</li>
             <li><strong>Multilingual NLP:</strong> Developed MATSFT and MMSFT frameworks by fine-tuning mT5 for low-resource Indian languages, resulting in multiple high-impact journal publications.</li>
-            <li><strong>Quantum AI & IP:</strong> Architected quantum-motivated summarization processors for data compression, leading to multiple Indian Patents, including <strong>1 Granted Patent</strong>.</li>
+            <li><strong>Quantum AI & IP:</strong> Architected quantum-motivated summarization processors for data compression, leading to multiple Indian Patents including 1 Granted Patent.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-top">
             <div>
-              <h3 class="role">Trainee Engineer (ML Research)</h3>
-              <span class="company"><i class="fa-solid fa-industry"></i> Tychee Innovations</span>
+              <div class="tl-role">Trainee Engineer (ML Research)</div>
+              <div class="tl-company"><i class="fa-solid fa-industry"></i> Tychee Innovations <span class="tl-loc">· Andhra Pradesh, India</span></div>
             </div>
-            <span class="date-badge">Aug 2020 – Jul 2021</span>
+            <span class="tl-date">Aug 2020 – Jul 2021</span>
           </div>
-          <ul class="bullet-list">
+          <ul class="tl-list">
             <li><strong>Industrial Safety Vision:</strong> Deployed real-time object detection to monitor hazardous machinery, triggering emergency stops via spatial tracking of hand proximity to danger zones.</li>
             <li><strong>Predictive Analytics:</strong> Developed ML models to forecast patient outcomes and translate clinical data into actionable insights for data-driven healthcare decisions.</li>
           </ul>
         </div>
+      </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-top">
             <div>
-              <h3 class="role">Assistant Professor</h3>
-              <span class="company"><i class="fa-solid fa-chalkboard-user"></i> Dhanekula Engineering College</span>
+              <div class="tl-role">Assistant Professor</div>
+              <div class="tl-company"><i class="fa-solid fa-chalkboard-user"></i> Dhanekula Engineering College <span class="tl-loc">· Andhra Pradesh, India</span></div>
             </div>
-            <span class="date-badge">Oct 2020 – Aug 2021</span>
+            <span class="tl-date">Oct 2020 – Aug 2021</span>
           </div>
-          <ul class="bullet-list">
+          <ul class="tl-list">
             <li><strong>Software Mentorship:</strong> Instructed Data Structures, Algorithms, and Python, mentoring students in software engineering best practices and technical problem-solving.</li>
           </ul>
         </div>
-
       </div>
-    </section>
 
-    <!-- SECTION: PROJECTS -->
-    <section id="projects" class="dashboard-section fade-in">
-      <header class="section-header">
-        <h2>Key Projects</h2>
-      </header>
-      
-      <div class="cards-grid">
-        <div class="project-widget">
-          <div class="tech-stack">FastAPI • AWS Bedrock • Pinecone • AWS Polly</div>
-          <h3>SmartTutor: Multimodal RAG Learning Platform</h3>
-          <ul class="bullet-list small">
-            <li><strong>Multimodal Ingestion Engine:</strong> Architected an advanced RAG pipeline parsing unstructured text, complex PDFs, and diagrams using AWS Bedrock (Nova Pro & Claude 3.5) for curriculum-aligned content generation.</li>
-            <li><strong>Context-Aware Retrieval:</strong> Orchestrated a scalable vector search architecture using Pinecone with semantic routing and hybrid search (dense + sparse) to drastically reduce retrieval latency.</li>
-            <li><strong>Interactive Agentic Loop:</strong> Engineered an autonomous, stateful assessment agent that adapts to student performance with real-time TTS auditory feedback via AWS Polly.</li>
-          </ul>
-        </div>
+    </div>
+  </section>
 
-        <div class="project-widget">
-          <div class="tech-stack">Python • Scikit-Learn • Multi-Agent Orchestration • AWS</div>
-          <h3>Enterprise Fraud Prevention System (Citi Bank)</h3>
-          <ul class="bullet-list small">
-            <li><strong>Hybrid Risk Intelligence:</strong> Spearheaded a dual-layered risk engine fusing statistical anomaly detection (XGBoost) with GenAI-driven forensics, reducing investigation time and false positives.</li>
-            <li><strong>Autonomous Rule Discovery:</strong> Innovated a multi-agent workflow for live transaction monitoring, utilizing tool-calling to detect zero-day fraud patterns with Human-in-the-Loop oversight.</li>
-            <li><strong>Secure Data Parsing Agent:</strong> Designed "Argus," an AI Data Analyst using <code>msoffcrypto</code> to securely decrypt and parse sensitive financial datasets locally for evidence-based risk verdicts.</li>
-          </ul>
-        </div>
+  <!-- ── PROJECTS ────────────────────────────────────────────── -->
+  <section id="projects" class="section reveal">
+    <div class="section-label"><span>Portfolio</span></div>
+    <h2 class="section-title">Key Projects</h2>
+    <p class="section-desc">Enterprise-grade AI systems built end-to-end.</p>
 
-        <div class="project-widget">
-          <div class="tech-stack">Computer Vision • PyTorch • AWS Textract • OpenCV</div>
-          <h3>Automated Bank Cheque Verification System</h3>
-          <ul class="bullet-list small">
-            <li><strong>Forensic Digitization Pipeline:</strong> Constructed an end-to-end vision pipeline using AWS Textract and OpenCV for layout analysis and digitization of MICR codes and payee details with high OCR accuracy.</li>
-            <li><strong>Signature Verification:</strong> Engineered a PyTorch-based Siamese Neural Network for one-shot learning, utilizing contrastive loss and feature embeddings to detect sophisticated forged signatures.</li>
-            <li><strong>Cross-Modal Logic:</strong> Programmed NLP algorithms to cross-verify extracted semantic data (e.g., matching numeric amounts against written text) to flag discrepancies for manual review.</li>
-          </ul>
-        </div>
+    <div class="projects-grid">
 
-        <div class="project-widget">
-          <div class="tech-stack">Llama 3 • Agno • LangGraph • FastAPI • MongoDB</div>
-          <h3>Personalized Medical AI Assistant</h3>
-          <ul class="bullet-list small">
-            <li><strong>Clinical Guardrails & RAG:</strong> Engineered a domain-specific agent using Llama 3 and Vector DBs, implementing query expansion and re-ranking to ground answers exclusively in verified medical literature.</li>
-            <li><strong>Stateful Memory Architecture:</strong> Developed a persistent context-retention engine using LangGraph and MongoDB to map longitudinal symptoms and medical history for personalized health insights.</li>
-          </ul>
+      <div class="proj-card featured">
+        <div class="proj-banner"></div>
+        <div class="proj-body">
+          <div class="proj-top">
+            <div class="proj-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="proj-meta">
+              <div class="proj-num">01 · SmartTutor</div>
+              <div class="proj-title">AI-Powered Knowledge Base &amp; Interactive Learning Platform</div>
+            </div>
+          </div>
+          <div class="proj-chips">
+            <span class="proj-chip">FastAPI</span><span class="proj-chip">AWS Bedrock</span><span class="proj-chip">Amazon Nova Pro</span><span class="proj-chip">Claude Sonnet 4</span><span class="proj-chip">Pinecone</span><span class="proj-chip">AWS Polly</span><span class="proj-chip">PostgreSQL</span><span class="proj-chip">AWS S3</span><span class="proj-chip">JWT/RBAC</span>
+          </div>
+          <div class="proj-divider"></div>
+
+          <div class="proj-features-grid">
+
+            <div class="feat-block">
+              <div class="feat-block-title"><i class="fa-solid fa-file-lines"></i> Document Processing</div>
+              <ul>
+                <li>Multi-format: PDF, DOCX, PPTX, PNG, JPG</li>
+                <li>Auto-conversion of Word &amp; PowerPoint to PDF</li>
+                <li>Intelligent image extraction &amp; spatial analysis</li>
+                <li>Custom prompt instructions per document</li>
+                <li>Module regeneration with new instructions</li>
+              </ul>
+            </div>
+
+            <div class="feat-block">
+              <div class="feat-block-title"><i class="fa-solid fa-robot"></i> AI-Powered Features</div>
+              <ul>
+                <li>Structured module generation via PHASE 1–3 analysis</li>
+                <li>Interactive AI tutor with AWS Polly TTS (4 voices)</li>
+                <li>Rich image explanations with analogies</li>
+                <li>Auto question generation &amp; answer validation</li>
+                <li>Internet search integration for extended context</li>
+              </ul>
+            </div>
+
+            <div class="feat-block">
+              <div class="feat-block-title"><i class="fa-solid fa-database"></i> Knowledge Management</div>
+              <ul>
+                <li>Vector search via Pinecone + Titan Embed (1024-dim)</li>
+                <li>Document sharing with edit proposals &amp; review</li>
+                <li>Course publishing for trainee access</li>
+                <li>Real-time progress tracking during processing</li>
+                <li>Markdown-supported module curation</li>
+              </ul>
+            </div>
+
+            <div class="feat-block">
+              <div class="feat-block-title"><i class="fa-solid fa-users"></i> Multi-User &amp; RBAC</div>
+              <ul>
+                <li>Roles: Super Admin, Trainer, Trainee</li>
+                <li>Process-based org grouping (departments)</li>
+                <li>Admin approval workflow for new trainers</li>
+                <li>Configurable rate limits per role (SlowAPI)</li>
+                <li>JWT auth with bcrypt password hashing</li>
+              </ul>
+            </div>
+
+            <div class="feat-block">
+              <div class="feat-block-title"><i class="fa-solid fa-microphone"></i> Interactive Learning</div>
+              <ul>
+                <li>TTS lectures with pause-for-questions</li>
+                <li>Raise Hand feature during live sessions</li>
+                <li>Voice input via Google Speech Recognition</li>
+                <li>Quiz system with instant AI feedback</li>
+                <li>Preview mode for trainers before publishing</li>
+              </ul>
+            </div>
+
+            <div class="feat-block">
+              <div class="feat-block-title"><i class="fa-solid fa-shield-halved"></i> Security &amp; Infra</div>
+              <ul>
+                <li>AWS RDS PostgreSQL + SQLAlchemy ORM</li>
+                <li>S3 server-side AES256 encryption</li>
+                <li>CORS + SQL injection protection</li>
+                <li>Async operations via asyncio</li>
+                <li>Rotating file handler logging</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="proj-stack-section">
+            <div class="proj-stack-label">Full Tech Stack</div>
+            <div class="proj-stack-chips">
+              <span class="proj-stack-chip">Python 3.9+</span>
+              <span class="proj-stack-chip">FastAPI</span>
+              <span class="proj-stack-chip">PostgreSQL (AWS RDS)</span>
+              <span class="proj-stack-chip">SQLAlchemy</span>
+              <span class="proj-stack-chip">Pinecone</span>
+              <span class="proj-stack-chip">AWS Bedrock</span>
+              <span class="proj-stack-chip">Amazon Nova Pro v1</span>
+              <span class="proj-stack-chip">Claude Sonnet 4</span>
+              <span class="proj-stack-chip">Titan Embed v2 (1024-dim)</span>
+              <span class="proj-stack-chip">AWS Polly</span>
+              <span class="proj-stack-chip">AWS S3</span>
+              <span class="proj-stack-chip">PyMuPDF</span>
+              <span class="proj-stack-chip">Google Speech API</span>
+              <span class="proj-stack-chip">JWT</span>
+              <span class="proj-stack-chip">bcrypt</span>
+              <span class="proj-stack-chip">SlowAPI</span>
+              <span class="proj-stack-chip">asyncio</span>
+              <span class="proj-stack-chip">Showdown.js</span>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <!-- SECTION: RESEARCH & IP -->
-    <section id="research" class="dashboard-section fade-in">
-      <header class="section-header">
-        <h2>Research & Intellectual Property</h2>
-      </header>
-      
-      <div class="widget padding-0">
-        <div class="dashboard-tabs">
-          <button class="dash-tab-btn active" data-tab="patents-tab"><i class="fa-solid fa-certificate"></i> Patents (11)</button>
-          <button class="dash-tab-btn" data-tab="publications-tab"><i class="fa-solid fa-book-open"></i> Publications (7)</button>
-        </div>
-
-        <!-- Scrollable Patent Container -->
-        <div id="patents-tab" class="dash-tab-content active scrollable-widget">
-          <ul class="data-list">
-            <li>
-              <div class="data-title">System and a method for automated exam evaluation and personalized learning feedback</div>
-              <div class="data-meta">Indian Patent No: 202541018210 | <em>Indian Patent Journal</em>, 2025</div>
-            </li>
-            <li>
-              <div class="data-title">A System and a Method for Managing API Calls in A Large Language Model</div>
-              <div class="data-meta">Indian Patent No: 202441096836 | <em>Indian Patent Journal</em>, 2024</div>
-            </li>
-            <li>
-              <div class="data-title">A System and a Method for Healthcare Data Processing and Decision Support</div>
-              <div class="data-meta">Indian Patent No: 202441076761 | <em>Indian Patent Journal</em>, 2024</div>
-            </li>
-            <li>
-              <div class="data-title">System and method for multilingual fake news detection in multimodal information</div>
-              <div class="data-meta">Indian Patent No: 202441030030 | <em>Indian Patent Journal</em>, 2024</div>
-            </li>
-            <li>
-              <div class="data-title">A Healthcare Summarization System and A Method Thereof</div>
-              <div class="data-meta">Indian Patent No: 202441005845 | <em>Indian Patent Journal</em>, 2024</div>
-            </li>
-            <li>
-              <div class="data-title">A System and a Method for Personalized E-Content Generation Based on Student Performance</div>
-              <div class="data-meta">Indian Patent No: 202441003347 | <em>Indian Patent Journal</em>, 2024</div>
-            </li>
-            <li class="granted-item">
-              <div class="data-title">System and method for deriving multilingual meeting minutes <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span></div>
-              <div class="data-meta">Indian Patent No: 202441001022 | <strong>Grant No: 581292</strong> | <em>Indian Patent Journal</em>, 2024</div>
-            </li>
-            <li class="granted-item">
-              <div class="data-title">System and method for multimodal multilingual input summarization using quantum motivated processors <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span></div>
-              <div class="data-meta">Indian Patent No: 202341005519 | <strong>Grant No: 66614</strong> | <em>Indian Patent Journal</em>, 2023</div>
-            </li>
-            <li>
-              <div class="data-title">A System and A Method for Generating Trading Coupons</div>
-              <div class="data-meta">Indian Patent No: 202341007665 | <em>Indian Patent Journal</em>, 2023</div>
-            </li>
-            <li class="granted-item">
-              <div class="data-title">A System and A Method for Prediction of The Strength of Concrete <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span></div>
-              <div class="data-meta">Indian Patent No: 202341007257 | <strong>Grant No: 582851</strong> | <em>Indian Patent Journal</em>, 2023</div>
-            </li>
-            <li>
-              <div class="data-title">A System and Method for Performing Multilingual Multimodal Summarization</div>
-              <div class="data-meta">Indian Patent No: 202241073648 | <em>Indian Patent Journal</em>, 2022</div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Scrollable Publications Container -->
-        <div id="publications-tab" class="dash-tab-content scrollable-widget">
-          <ul class="data-list">
-            <li>
-              <div class="data-title">MATSFT: User query-based multilingual abstractive text summarization for low resource Indian languages by fine-tuning mT5</div>
-              <div class="data-meta"><strong>Phani, S.</strong>, et al. | <em>Alexandria Engineering Journal</em>, Elsevier, 2025.</div>
-              <a href="https://doi.org/10.1016/j.aej.2025.04.031" target="_blank" class="link-btn">DOI: 10.1016/j.aej.2025.04.031 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
-            <li>
-              <div class="data-title">Improving Preliminary Clinical Diagnosis Accuracy through Knowledge Filtering Techniques in Consultation Dialogues</div>
-              <div class="data-meta">Abdul, A., <strong>Phani, S.</strong>, et al. | <em>Computer Methods and Programs in Biomedicine</em>, Elsevier, 2024.</div>
-              <a href="https://doi.org/10.1016/j.cmpb.2024.108051" target="_blank" class="link-btn">DOI: 10.1016/j.cmpb.2024.108051 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
-            <li>
-              <div class="data-title">MMSFT: Multilingual Multimodal Summarization by Fine-tuning Transformers</div>
-              <div class="data-meta"><strong>Phani, S.</strong>, et al. | <em>IEEE Access</em>, 2024.</div>
-              <a href="https://doi.org/10.1109/ACCESS.2024.3454382" target="_blank" class="link-btn">DOI: 10.1109/ACCESS.2024.3454382 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
-            <li>
-              <div class="data-title">MMSML: Multilingual Multimodal Summarization for Multimodal Input</div>
-              <div class="data-meta"><strong>Phani, S.</strong>, et al. | <em>Intl. Conference on Data Science and Applications</em>, Springer, 2024.</div>
-              <a href="https://doi.org/10.1007/978-981-96-2724-0_5" target="_blank" class="link-btn">DOI: 10.1007/978-981-96-2724-0_5 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
-            <li>
-              <div class="data-title">Recognition for Attendance System Using Reinforcement Learning</div>
-              <div class="data-meta"><strong>Phani, S.</strong>, et al. | <em>FICTA</em>, Springer, 2023.</div>
-              <a href="https://doi.org/10.1007/978-981-99-6702-5_15" target="_blank" class="link-btn">DOI: 10.1007/978-981-99-6702-5_15 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
-            <li>
-              <div class="data-title">Abstractive Text Summarization with Fine-Tuned Transformer</div>
-              <div class="data-meta"><strong>Phani, S.</strong>, et al. | <em>MAI 2022</em>, Springer, 2023.</div>
-              <a href="https://doi.org/10.1007/978-981-99-0189-0_46" target="_blank" class="link-btn">DOI: 10.1007/978-981-99-0189-0_46 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
-            <li>
-              <div class="data-title">Machine Learning Classifiers and Along with TPOT Classifier (AutoML) to Predict the Readmission Patterns of Diabetic Patients</div>
-              <div class="data-meta"><strong>Phani, S.</strong>, et al. | <em>IJRTE</em>, 2020.</div>
-              <a href="https://doi.org/10.35940/ijrte.f7415.059120" target="_blank" class="link-btn">DOI: 10.35940/ijrte.f7415.059120 <i class="fa-solid fa-up-right-from-square"></i></a>
-            </li>
+      <div class="proj-card accent-purple">
+        <div class="proj-banner"></div>
+        <div class="proj-body">
+          <div class="proj-top">
+            <div class="proj-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="proj-meta">
+              <div class="proj-num">02 · Fraud Prevention</div>
+              <div class="proj-title">Enterprise Fraud Prevention System — Citi Bank</div>
+            </div>
+          </div>
+          <div class="proj-chips">
+            <span class="proj-chip">Python</span><span class="proj-chip">XGBoost</span><span class="proj-chip">Multi-Agent</span><span class="proj-chip">AWS</span>
+          </div>
+          <div class="proj-divider"></div>
+          <ul class="proj-list">
+            <li><strong>Hybrid Risk Engine:</strong> Dual-layered system fusing statistical anomaly detection (XGBoost) with GenAI-driven forensics, reducing investigation time and false positives.</li>
+            <li><strong>Autonomous Rule Discovery:</strong> Multi-agent workflow for live transaction monitoring, detecting zero-day fraud patterns with Human-in-the-Loop oversight.</li>
+            <li><strong>Argus Agent:</strong> AI Data Analyst using <code>msoffcrypto</code> to securely decrypt and parse sensitive financial datasets locally for evidence-based risk verdicts.</li>
           </ul>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION: EDUCATION -->
-    <section id="education" class="dashboard-section fade-in">
-      <header class="section-header">
-        <h2>Education</h2>
-      </header>
-      <div class="cards-grid">
-        <div class="edu-widget">
-          <div class="edu-date">2021 – 2025</div>
-          <h4>Ph.D. in Computer Science & Engineering</h4>
-          <p>SRM University AP</p>
-          <div class="score">CGPA: 9.25/10.0</div>
-        </div>
-        <div class="edu-widget">
-          <div class="edu-date">2018 – 2020</div>
-          <h4>M.Tech in Computer Science & Engineering</h4>
-          <p>KL University</p>
-          <div class="score">CGPA: 8.5/10.0</div>
-        </div>
-        <div class="edu-widget">
-          <div class="edu-date">2014 – 2018</div>
-          <h4>B.Tech in Computer Science & Engineering</h4>
-          <p>JNTUK</p>
-          <div class="score">81.0%</div>
-        </div>
-        <div class="edu-widget">
-          <div class="edu-date">2012 – 2014</div>
-          <h4>Intermediate (MPC)</h4>
-          <p>Board of Intermediate Education</p>
-          <div class="score">91.70%</div>
-        </div>
-        <div class="edu-widget">
-          <div class="edu-date">2011 – 2012</div>
-          <h4>SSC (10th Standard)</h4>
-          <p>Board of Secondary Education</p>
-          <div class="score">GPA: 9.3/10.0</div>
+      <div class="proj-card accent-amber">
+        <div class="proj-banner"></div>
+        <div class="proj-body">
+          <div class="proj-top">
+            <div class="proj-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div class="proj-meta">
+              <div class="proj-num">03 · Cheque Verification</div>
+              <div class="proj-title">Automated Bank Cheque Verification System</div>
+            </div>
+          </div>
+          <div class="proj-chips">
+            <span class="proj-chip">PyTorch</span><span class="proj-chip">AWS Textract</span><span class="proj-chip">OpenCV</span><span class="proj-chip">Siamese NN</span>
+          </div>
+          <div class="proj-divider"></div>
+          <ul class="proj-list">
+            <li><strong>Forensic Digitization:</strong> End-to-end vision pipeline using AWS Textract and OpenCV for layout analysis and digitization of MICR codes and payee details with high OCR accuracy.</li>
+            <li><strong>Signature Verification:</strong> PyTorch-based Siamese Neural Network for one-shot learning, using contrastive loss and feature embeddings to detect forged signatures.</li>
+            <li><strong>Cross-Modal Logic:</strong> NLP algorithms cross-verifying extracted semantic data (numeric vs. written amounts) to flag discrepancies for manual review.</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION: RESUME PREVIEW -->
-    <section id="resume" class="dashboard-section fade-in">
-      <header class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
-        <h2>Interactive Resume</h2>
-        <a href="https://github.com/phanikumar96/Portfolio/raw/main/Phani_Siginamsetty_ResumeV1.pdf" download class="btn-download"><i class="fa-solid fa-download"></i> Download PDF</a>
-      </header>
-      
-      <div class="resume-widget">
-        <!-- Using Google Docs Viewer for seamless GitHub PDF iframe embedding -->
-        <iframe 
-          src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/phanikumar96/Portfolio/main/Phani_Siginamsetty_ResumeV1.pdf&embedded=true" 
-          frameborder="0" 
-          allowfullscreen>
-        </iframe>
+      <div class="proj-card accent-green">
+        <div class="proj-banner"></div>
+        <div class="proj-body">
+          <div class="proj-top">
+            <div class="proj-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="proj-meta">
+              <div class="proj-num">04 · Medical AI</div>
+              <div class="proj-title">Personalized Medical AI Assistant</div>
+            </div>
+          </div>
+          <div class="proj-chips">
+            <span class="proj-chip">Llama 3</span><span class="proj-chip">Agno</span><span class="proj-chip">LangGraph</span><span class="proj-chip">MongoDB</span>
+          </div>
+          <div class="proj-divider"></div>
+          <ul class="proj-list">
+            <li><strong>Clinical Guardrails &amp; RAG:</strong> Domain-specific agent using Llama 3 and Vector DBs, with query expansion and re-ranking to ground answers exclusively in verified medical literature.</li>
+            <li><strong>Stateful Memory:</strong> Persistent context-retention engine using LangGraph and MongoDB to map longitudinal symptoms and medical history for personalized health insights.</li>
+          </ul>
+        </div>
       </div>
-    </section>
 
-  </main>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- ── RESEARCH & IP ───────────────────────────────────────── -->
+  <section id="research" class="section reveal">
+    <div class="section-label"><span>Intellectual Property</span></div>
+    <h2 class="section-title">Research & Patents</h2>
+    <p class="section-desc">11 patents filed across AI, NLP, and healthcare — 3 granted. Published in Elsevier, IEEE & Springer.</p>
+
+    <div class="research-stats">
+      <div class="rs-stat s1">
+        <div class="rs-stat-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div>
+          <div class="rs-stat-num">11</div>
+          <div class="rs-stat-lbl">Patents Filed</div>
+        </div>
+      </div>
+      <div class="rs-stat s2">
+        <div class="rs-stat-icon"><i class="fa-solid fa-check-double"></i></div>
+        <div>
+          <div class="rs-stat-num">3</div>
+          <div class="rs-stat-lbl">Granted</div>
+        </div>
+      </div>
+      <div class="rs-stat s3">
+        <div class="rs-stat-icon"><i class="fa-solid fa-book-open"></i></div>
+        <div>
+          <div class="rs-stat-num">7</div>
+          <div class="rs-stat-lbl">Publications</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-wrap">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="tab-patents">
+          <i class="fa-solid fa-certificate"></i> Patents
+          <span class="tab-count">11</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-pubs">
+          <i class="fa-solid fa-book-open"></i> Publications
+          <span class="tab-count">7</span>
+        </button>
+      </div>
+
+      <div id="tab-patents" class="tab-pane active">
+        <div class="patent-grid">
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">System and a method for automated exam evaluation and personalized learning feedback</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202541018210</span>
+              <span class="patent-year">2025</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">A System and a Method for Managing API Calls in A Large Language Model</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202441096836</span>
+              <span class="patent-year">2024</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">A System and a Method for Healthcare Data Processing and Decision Support</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202441076761</span>
+              <span class="patent-year">2024</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">System and method for multilingual fake news detection in multimodal information</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202441030030</span>
+              <span class="patent-year">2024</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">A Healthcare Summarization System and A Method Thereof</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202441005845</span>
+              <span class="patent-year">2024</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">A System and a Method for Personalized E-Content Generation Based on Student Performance</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202441003347</span>
+              <span class="patent-year">2024</span>
+            </div>
+          </div>
+
+          <div class="patent-card is-granted">
+            <div class="patent-top">
+              <div class="patent-title">System and method for deriving multilingual meeting minutes</div>
+              <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202441001022</span>
+              <span class="patent-grant-no">Grant: 581292</span>
+              <span class="patent-year">2024</span>
+            </div>
+          </div>
+
+          <div class="patent-card is-granted">
+            <div class="patent-top">
+              <div class="patent-title">System and method for multimodal multilingual input summarization using quantum motivated processors</div>
+              <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202341005519</span>
+              <span class="patent-grant-no">Grant: 66614</span>
+              <span class="patent-year">2023</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">A System and A Method for Generating Trading Coupons</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202341007665</span>
+              <span class="patent-year">2023</span>
+            </div>
+          </div>
+
+          <div class="patent-card is-granted">
+            <div class="patent-top">
+              <div class="patent-title">A System and A Method for Prediction of The Strength of Concrete</div>
+              <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202341007257</span>
+              <span class="patent-grant-no">Grant: 582851</span>
+              <span class="patent-year">2023</span>
+            </div>
+          </div>
+
+          <div class="patent-card">
+            <div class="patent-top">
+              <div class="patent-title">A System and Method for Performing Multilingual Multimodal Summarization</div>
+            </div>
+            <div class="patent-meta">
+              <span class="patent-no">202241073648</span>
+              <span class="patent-year">2022</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="tab-pubs" class="tab-pane">
+        <div class="pub-list">
+
+          <div class="pub-card">
+            <div class="pub-num">[1]</div>
+            <div class="pub-body">
+              <div class="pub-title">MATSFT: User query-based multilingual abstractive text summarization for low resource Indian languages by fine-tuning mT5</div>
+              <div class="pub-venue">
+                <span class="pub-journal">Alexandria Engineering Journal · Elsevier</span>
+                <span class="pub-year-badge">2025</span>
+              </div>
+              <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.1016/j.aej.2025.04.031" target="_blank" class="doi-link">10.1016/j.aej.2025.04.031 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-num">[2]</div>
+            <div class="pub-body">
+              <div class="pub-title">Improving Preliminary Clinical Diagnosis Accuracy through Knowledge Filtering Techniques in Consultation Dialogues</div>
+              <div class="pub-venue">
+                <span class="pub-journal">Computer Methods and Programs in Biomedicine · Elsevier</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <div class="pub-authors">Abdul, A., <strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.1016/j.cmpb.2024.108051" target="_blank" class="doi-link">10.1016/j.cmpb.2024.108051 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-num">[3]</div>
+            <div class="pub-body">
+              <div class="pub-title">MMSFT: Multilingual Multimodal Summarization by Fine-tuning Transformers</div>
+              <div class="pub-venue">
+                <span class="pub-journal">IEEE Access</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.1109/ACCESS.2024.3454382" target="_blank" class="doi-link">10.1109/ACCESS.2024.3454382 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-num">[4]</div>
+            <div class="pub-body">
+              <div class="pub-title">MMSML: Multilingual Multimodal Summarization for Multimodal Input</div>
+              <div class="pub-venue">
+                <span class="pub-journal">Intl. Conference on Data Science and Applications · Springer</span>
+                <span class="pub-year-badge">2024</span>
+              </div>
+              <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.1007/978-981-96-2724-0_5" target="_blank" class="doi-link">10.1007/978-981-96-2724-0_5 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-num">[5]</div>
+            <div class="pub-body">
+              <div class="pub-title">Recognition for Attendance System Using Reinforcement Learning</div>
+              <div class="pub-venue">
+                <span class="pub-journal">FICTA · Springer</span>
+                <span class="pub-year-badge">2023</span>
+              </div>
+              <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.1007/978-981-99-6702-5_15" target="_blank" class="doi-link">10.1007/978-981-99-6702-5_15 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-num">[6]</div>
+            <div class="pub-body">
+              <div class="pub-title">Abstractive Text Summarization with Fine-Tuned Transformer</div>
+              <div class="pub-venue">
+                <span class="pub-journal">MAI 2022 · Springer</span>
+                <span class="pub-year-badge">2023</span>
+              </div>
+              <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.1007/978-981-99-0189-0_46" target="_blank" class="doi-link">10.1007/978-981-99-0189-0_46 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="pub-card">
+            <div class="pub-num">[7]</div>
+            <div class="pub-body">
+              <div class="pub-title">Machine Learning Classifiers and TPOT Classifier (AutoML) to Predict Readmission Patterns of Diabetic Patients</div>
+              <div class="pub-venue">
+                <span class="pub-journal">IJRTE</span>
+                <span class="pub-year-badge">2020</span>
+              </div>
+              <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
+              <a href="https://doi.org/10.35940/ijrte.f7415.059120" target="_blank" class="doi-link">10.35940/ijrte.f7415.059120 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ──────────────────────────────────────────── -->
+  <section id="education" class="section reveal">
+    <div class="section-label"><span>Academic Background</span></div>
+    <h2 class="section-title">Education</h2>
+    <p class="section-desc">Strong academic foundation from B.Tech through PhD.</p>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">2021 – 2025</div>
+        <div class="edu-degree">Ph.D. — Computer Science & Engineering</div>
+        <div class="edu-inst">SRM University AP, Amaravati</div>
+        <span class="edu-score">CGPA: 9.25 / 10.0</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2018 – 2020</div>
+        <div class="edu-degree">M.Tech — Computer Science & Engineering</div>
+        <div class="edu-inst">KL University</div>
+        <span class="edu-score">CGPA: 8.5 / 10.0</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2014 – 2018</div>
+        <div class="edu-degree">B.Tech — Computer Science & Engineering</div>
+        <div class="edu-inst">JNTUK</div>
+        <span class="edu-score">81.0%</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2012 – 2014</div>
+        <div class="edu-degree">Intermediate (MPC)</div>
+        <div class="edu-inst">Board of Intermediate Education</div>
+        <span class="edu-score">91.70%</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2011 – 2012</div>
+        <div class="edu-degree">SSC — 10th Standard</div>
+        <div class="edu-inst">Board of Secondary Education</div>
+        <span class="edu-score">GPA: 9.3 / 10.0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESUME ─────────────────────────────────────────────── -->
+  <section id="resume" class="section reveal">
+    <div class="section-head-row">
+      <div>
+        <div class="section-label"><span>Document</span></div>
+        <h2 class="section-title">Resume</h2>
+      </div>
+      <a href="Phani_Siginamsetty_ResumeV1.pdf" download class="btn-download">
+        <i class="fa-solid fa-download"></i> Download PDF
+      </a>
+    </div>
+    <div class="resume-frame">
+      <iframe
+        src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/phanikumar96/Portfolio/main/Phani_Siginamsetty_ResumeV1.pdf&embedded=true"
+        frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
