@@ -1,256 +1,106 @@
-/* ═══════════════════════════════════════════════════════════
-   Portfolio Script — Dr. Phani Siginamsetty
-═══════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Mobile sidebar ───────────────────────────────────────
-  const sidebar = document.getElementById('sidebar');
-  const menuToggle = document.getElementById('menuToggle');
-
-  menuToggle?.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-    const icon = menuToggle.querySelector('i');
-    icon.className = sidebar.classList.contains('open')
-      ? 'fa-solid fa-xmark'
-      : 'fa-solid fa-bars';
-  });
-
-  document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', () => {
-      if (window.innerWidth <= 860) {
-        sidebar.classList.remove('open');
-        const icon = menuToggle?.querySelector('i');
-        if (icon) icon.className = 'fa-solid fa-bars';
-      }
-    });
-  });
-
-  // ── ScrollSpy ────────────────────────────────────────────
-  const sections = document.querySelectorAll('section[id], .hero[id]');
-  const navItems = document.querySelectorAll('.nav-item');
-
-  const spy = () => {
-    let active = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 220) active = s.id;
-    });
-    navItems.forEach(n => {
-      n.classList.toggle('active', n.getAttribute('href') === `#${active}`);
-    });
-  };
-
-  window.addEventListener('scroll', spy, { passive: true });
-  spy();
-
-  // ── Scroll reveal ────────────────────────────────────────
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  // ── Animated counters ────────────────────────────────────
-  let countersRan = false;
-
-  const runCounters = () => {
-    if (countersRan) return;
-    countersRan = true;
-    document.querySelectorAll('[data-count]').forEach(el => {
-      const target = +el.dataset.count;
-      let n = 0;
-      const duration = 1400;
-      const start = performance.now();
-      const tick = (now) => {
-        const progress = Math.min((now - start) / duration, 1);
-        // ease out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        n = Math.round(eased * target);
-        el.textContent = n;
-        if (progress < 1) requestAnimationFrame(tick);
-        else el.textContent = target;
-      };
-      requestAnimationFrame(tick);
-    });
-  };
-
-  const heroObs = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) runCounters();
-  }, { threshold: 0.3 });
-
-  const heroEl = document.getElementById('hero');
-  if (heroEl) heroObs.observe(heroEl);
-
-  // ── Typed role rotator ───────────────────────────────────
-  const roles = [
-    'Autonomous AI Agents',
-    'Multi-Agent Systems',
-    'RAG Pipelines',
-    'LLM Fine-Tuning',
-    'Data Science Solutions',
-    'Generative AI Products',
-    'Agentic Workflows',
-  ];
-  const typedEl = document.getElementById('typedRole');
-  if (typedEl) {
-    let ri = 0, ci = 0, deleting = false;
-    const typeSpeed = 60, deleteSpeed = 35, pauseMs = 1800;
-    const tick = () => {
-      const word = roles[ri];
-      if (!deleting) {
-        typedEl.textContent = word.slice(0, ++ci);
-        if (ci === word.length) { deleting = true; setTimeout(tick, pauseMs); return; }
+  // Mobile Menu Toggle logic
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      const icon = mobileToggle.querySelector('i');
+      if (sidebar.classList.contains('open')) {
+        icon.classList.replace('fa-bars', 'fa-xmark');
       } else {
-        typedEl.textContent = word.slice(0, --ci);
-        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+        icon.classList.replace('fa-xmark', 'fa-bars');
       }
-      setTimeout(tick, deleting ? deleteSpeed : typeSpeed);
-    };
-    tick();
-  }
-  document.querySelectorAll('.skill-row-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const row = header.closest('.skill-row');
-      const isOpen = row.classList.contains('open');
-      // close all
-      document.querySelectorAll('.skill-row').forEach(r => r.classList.remove('open'));
-      // toggle clicked
-      if (!isOpen) row.classList.add('open');
     });
-  });
-
-  // ── Research tabs ────────────────────────────────────────
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab)?.classList.add('active');
-    });
-  });
-
-  // ── Cursor glow (desktop) ────────────────────────────────
-  if (window.matchMedia('(pointer: fine)').matches) {
-    const glow = Object.assign(document.createElement('div'), {});
-    Object.assign(glow.style, {
-      position: 'fixed',
-      pointerEvents: 'none',
-      zIndex: '9999',
-      width: '400px',
-      height: '400px',
-      borderRadius: '50%',
-      background: 'radial-gradient(circle, rgba(79,158,255,0.06) 0%, transparent 65%)',
-      transform: 'translate(-50%,-50%)',
-      top: '0', left: '0',
-      transition: 'opacity .4s',
-    });
-    document.body.appendChild(glow);
-
-    let tx = 0, ty = 0, cx = 0, cy = 0;
-    document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
-
-    const loop = () => {
-      cx += (tx - cx) * 0.1;
-      cy += (ty - cy) * 0.1;
-      glow.style.left = cx + 'px';
-      glow.style.top  = cy + 'px';
-      requestAnimationFrame(loop);
-    };
-    loop();
   }
 
-  // ── 3D tilt on cards ────────────────────────────────────
-  const tiltEls = document.querySelectorAll('.proj-card, .edu-card, .patent-card');
-
-  tiltEls.forEach(el => {
-    el.addEventListener('mousemove', e => {
-      const r = el.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width  - 0.5) * 8;
-      const y = ((e.clientY - r.top)  / r.height - 0.5) * -8;
-      el.style.transform = `perspective(700px) rotateX(${y}deg) rotateY(${x}deg) translateY(-5px)`;
+  // Close sidebar on link click (Mobile)
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if(window.innerWidth <= 900) {
+        sidebar.classList.remove('open');
+        document.querySelector('.mobile-menu-toggle i').classList.replace('fa-xmark', 'fa-bars');
+      }
     });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
   });
 
-  // ── Hero particle canvas ─────────────────────────────────
-  const canvas = document.getElementById('hero-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let W, H, particles = [];
-
-    const resize = () => {
-      W = canvas.width  = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    };
-
-    resize();
-    window.addEventListener('resize', resize);
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * W;
-        this.y = Math.random() * H;
-        this.r = Math.random() * 1.5 + .5;
-        this.vx = (Math.random() - .5) * .4;
-        this.vy = (Math.random() - .5) * .4;
-        this.alpha = Math.random() * .5 + .1;
+  // ScrollSpy - highlight active nav item based on scroll position
+  const sections = document.querySelectorAll('.dashboard-section');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= (sectionTop - 150)) {
+        current = section.getAttribute('id');
       }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(79,158,255,${this.alpha})`;
-        ctx.fill();
-      }
-    }
+    });
 
-    for (let i = 0; i < 80; i++) particles.push(new Particle());
+    navItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('href') === `#${current}`) {
+        item.classList.add('active');
+      }
+    });
+  });
 
-    const drawLines = () => {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(79,158,255,${.12 * (1 - dist/100)})`;
-            ctx.lineWidth = .5;
-            ctx.stroke();
-          }
+  // Animated KPI Counters
+  const counters = document.querySelectorAll('.counter');
+  const speed = 20; // Lower is faster
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 40);
+        } else {
+          counter.innerText = target;
         }
-      }
-    };
+      };
+      updateCount();
+    });
+  };
 
-    const animCanvas = () => {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach(p => { p.update(); p.draw(); });
-      drawLines();
-      requestAnimationFrame(animCanvas);
-    };
-    animCanvas();
-  }
+  // Dashboard Tabs (Research: Patents vs Publications)
+  const tabBtns = document.querySelectorAll('.dash-tab-btn');
+  const tabContents = document.querySelectorAll('.dash-tab-content');
 
-  // ── Smooth scroll for anchor links ──────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      // Add active to current
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-tab');
+      document.getElementById(targetId).classList.add('active');
     });
   });
 
+  // Scroll Reveal Animations
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Trigger counter animation when Overview section is visible
+        if (entry.target.id === 'overview') {
+          animateCounters();
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  fadeElements.forEach(el => appearOnScroll.observe(el));
 });
