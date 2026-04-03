@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Phani Siginamsetty — Data Scientist, AI Researcher</title>
+  <title>Dr. Phani Siginamsetty — Data Scientist & AI Researcher</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -74,70 +75,103 @@
   <!-- ── HERO ─────────────────────────────────────────────── -->
   <section id="hero" class="hero reveal">
     <canvas id="hero-canvas"></canvas>
-    <div class="hero-eyebrow">Associate Data Scientist · Hexaware Technologies · Chennai, India</div>
 
-    <h1 class="hero-name">
-      Dr. Phani<br>
-      <span class="grad">Siginamsetty</span>
-    </h1>
+    <div class="hero-layout">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">Associate Data Scientist · Hexaware Technologies · Chennai, India</div>
 
-    <div class="hero-roles">
-      <span class="role-static">I build</span>
-      <span class="role-typed" id="typedRole">Autonomous AI Agents</span>
-    </div>
+        <h1 class="hero-name">
+          Dr. Phani<br>
+          <span class="grad">Siginamsetty</span>
+        </h1>
 
-    <p class="hero-subtitle">
-      PhD-qualified Data Scientist and AI Engineer with 5+ years bridging cutting-edge academic research with enterprise-grade production systems.
-      Expert in designing autonomous Multi-Agent Systems — where LLM-powered agents plan, reason, use tools, and collaborate to solve complex real-world workflows end-to-end.
-      Deep hands-on experience across the full AI lifecycle: from RAG pipeline architecture and LLM fine-tuning (PEFT/QLoRA) to quantized edge deployment, MLOps, and scalable cloud infrastructure on AWS.
-      Proven ability to translate research breakthroughs in multilingual NLP, multimodal AI, and quantum-motivated algorithms into production-ready systems — backed by 11 patents and 7 peer-reviewed publications in Elsevier, IEEE, and Springer.
-      Passionate about building intelligent systems that are not just accurate, but autonomous, explainable, and deployable at scale.
-    </p>
+        <div class="hero-roles">
+          <span class="role-static">I build</span>
+          <span class="role-typed" id="typedRole">Autonomous AI Agents</span>
+        </div>
 
-    <div class="hero-tags">
-      <span class="hero-tag"><i class="fa-solid fa-robot"></i> Agentic AI</span>
-      <span class="hero-tag"><i class="fa-solid fa-network-wired"></i> Multi-Agent Systems</span>
-      <span class="hero-tag"><i class="fa-solid fa-brain"></i> Generative AI</span>
-      <span class="hero-tag"><i class="fa-solid fa-magnifying-glass-chart"></i> RAG Pipelines</span>
-      <span class="hero-tag"><i class="fa-solid fa-sliders"></i> LLM Fine-Tuning</span>
-      <span class="hero-tag"><i class="fa-solid fa-chart-line"></i> Data Science</span>
-      <span class="hero-tag"><i class="fa-solid fa-eye"></i> Computer Vision</span>
-      <span class="hero-tag"><i class="fa-solid fa-language"></i> NLP Research</span>
-      <span class="hero-tag"><i class="fa-solid fa-cloud"></i> MLOps · AWS</span>
-      <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Edge AI</span>
-      <span class="hero-tag"><i class="fa-solid fa-code-branch"></i> LangGraph · CrewAI</span>
-      <span class="hero-tag"><i class="fa-solid fa-database"></i> Vector Databases</span>
-      <span class="hero-tag"><i class="fa-solid fa-flask"></i> AI Research</span>
-      <span class="hero-tag"><i class="fa-solid fa-certificate"></i> 11 Patents</span>
-      <span class="hero-tag"><i class="fa-solid fa-book-open"></i> 7 Publications</span>
-    </div>
+        <p class="hero-subtitle">
+          PhD-qualified Data Scientist and AI Engineer with 5+ years bridging cutting-edge academic research with enterprise-grade production systems.
+          Expert in designing autonomous Multi-Agent Systems — where LLM-powered agents plan, reason, use tools, and collaborate to solve complex real-world workflows end-to-end.
+          Deep hands-on experience across the full AI lifecycle: from RAG pipeline architecture and LLM fine-tuning (PEFT/QLoRA) to quantized edge deployment, MLOps, and scalable cloud infrastructure on AWS.
+          Proven ability to translate research breakthroughs in multilingual NLP, multimodal AI, and quantum-motivated algorithms into production-ready systems — backed by 11 patents and 7 peer-reviewed publications in Elsevier, IEEE, and Springer.
+          Passionate about building intelligent systems that are not just accurate, but autonomous, explainable, and deployable at scale.
+        </p>
 
-    <div class="hero-cta">
-      <a href="#projects" class="btn-primary"><i class="fa-solid fa-code-branch"></i> View Projects</a>
-      <a href="#resume"   class="btn-secondary"><i class="fa-solid fa-file-pdf"></i> Resume</a>
-      <a href="mailto:siginamsettyphani@gmail.com" class="btn-secondary"><i class="fa-solid fa-envelope"></i> Contact</a>
-    </div>
+        <div class="hero-tags">
+          <span class="hero-tag"><i class="fa-solid fa-robot"></i> Agentic AI</span>
+          <span class="hero-tag"><i class="fa-solid fa-network-wired"></i> Multi-Agent Systems</span>
+          <span class="hero-tag"><i class="fa-solid fa-brain"></i> Generative AI</span>
+          <span class="hero-tag"><i class="fa-solid fa-magnifying-glass-chart"></i> RAG Pipelines</span>
+          <span class="hero-tag"><i class="fa-solid fa-sliders"></i> LLM Fine-Tuning</span>
+          <span class="hero-tag"><i class="fa-solid fa-chart-line"></i> Data Science</span>
+          <span class="hero-tag"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          <span class="hero-tag"><i class="fa-solid fa-language"></i> NLP Research</span>
+          <span class="hero-tag"><i class="fa-solid fa-cloud"></i> MLOps · AWS</span>
+          <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Edge AI</span>
+          <span class="hero-tag"><i class="fa-solid fa-code-branch"></i> LangGraph · CrewAI</span>
+          <span class="hero-tag"><i class="fa-solid fa-database"></i> Vector Databases</span>
+          <span class="hero-tag"><i class="fa-solid fa-flask"></i> AI Research</span>
+          <span class="hero-tag"><i class="fa-solid fa-certificate"></i> 11 Patents</span>
+          <span class="hero-tag"><i class="fa-solid fa-book-open"></i> 7 Publications</span>
+        </div>
 
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num" data-count="11">0</div>
-        <div class="hero-stat-label">Patents Filed</div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary"><i class="fa-solid fa-code-branch"></i> View Projects</a>
+          <a href="#resume"   class="btn-secondary"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+          <a href="mailto:siginamsettyphani@gmail.com" class="btn-secondary"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
       </div>
-      <div>
-        <div class="hero-stat-num" data-count="3">0</div>
-        <div class="hero-stat-label">Granted Patents</div>
-      </div>
-      <div>
-        <div class="hero-stat-num" data-count="7">0</div>
-        <div class="hero-stat-label">Publications</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">9.25</div>
-        <div class="hero-stat-label">PhD CGPA</div>
-      </div>
-      <div>
-        <div class="hero-stat-num" data-count="5">0</div>
-        <div class="hero-stat-label">Years Experience</div>
+
+      <!-- RIGHT: visual panel -->
+      <div class="hero-right">
+        <!-- Donut chart -->
+        <div class="hero-chart-card">
+          <div class="hero-chart-title">Expertise Distribution</div>
+          <div class="hero-chart-wrap">
+            <canvas id="expertiseDonut"></canvas>
+            <div class="donut-center-label">
+              <span class="dcl-num">62+</span>
+              <span class="dcl-sub">Skills</span>
+            </div>
+          </div>
+          <div class="donut-legend" id="donutLegend"></div>
+        </div>
+
+        <!-- Live stat cards -->
+        <div class="hero-stat-grid">
+          <div class="hsg-card">
+            <i class="fa-solid fa-certificate hsg-icon blue"></i>
+            <div class="hsg-num" data-count="11">0</div>
+            <div class="hsg-lbl">Patents Filed</div>
+          </div>
+          <div class="hsg-card">
+            <i class="fa-solid fa-check-double hsg-icon green"></i>
+            <div class="hsg-num" data-count="3">0</div>
+            <div class="hsg-lbl">Granted</div>
+          </div>
+          <div class="hsg-card">
+            <i class="fa-solid fa-book-open hsg-icon purple"></i>
+            <div class="hsg-num" data-count="7">0</div>
+            <div class="hsg-lbl">Publications</div>
+          </div>
+          <div class="hsg-card">
+            <i class="fa-solid fa-star hsg-icon amber"></i>
+            <div class="hsg-num">9.25</div>
+            <div class="hsg-lbl">PhD CGPA</div>
+          </div>
+          <div class="hsg-card">
+            <i class="fa-solid fa-briefcase hsg-icon blue"></i>
+            <div class="hsg-num" data-count="5">0</div>
+            <div class="hsg-lbl">Yrs Experience</div>
+          </div>
+          <div class="hsg-card">
+            <i class="fa-solid fa-code hsg-icon green"></i>
+            <div class="hsg-num" data-count="4">0</div>
+            <div class="hsg-lbl">Key Projects</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -146,112 +180,164 @@
   <section id="skills" class="section reveal">
     <div class="section-label"><span>Technical Expertise</span></div>
     <h2 class="section-title">Skills & Stack</h2>
-    <p class="section-desc">Full-spectrum ML/AI stack — click any category to expand.</p>
+    <p class="section-desc">Full-spectrum ML/AI stack — hover bars, click categories to explore.</p>
 
-    <div class="skills-layout">
-
-      <div class="skill-row open" data-cat="genai">
-        <div class="skill-row-header">
-          <div class="skill-row-icon"><i class="fa-solid fa-robot"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-title">GenAI & Agentic Frameworks</div>
-            <div class="skill-row-count">11 technologies</div>
+    <div class="skills-master">
+      <!-- Left: bar chart proficiency -->
+      <div class="skills-bars-panel">
+        <div class="sbp-title">Core Proficiency</div>
+        <div class="skill-bars" id="skillBars">
+          <div class="sbar-item" data-pct="95">
+            <div class="sbar-label"><span>Generative AI & LLMs</span><span class="sbar-pct">95%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-blue"></div></div>
           </div>
-          <div class="skill-row-accent"></div>
-          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+          <div class="sbar-item" data-pct="92">
+            <div class="sbar-label"><span>Multi-Agent Systems</span><span class="sbar-pct">92%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-purple"></div></div>
+          </div>
+          <div class="sbar-item" data-pct="90">
+            <div class="sbar-label"><span>RAG & Vector Search</span><span class="sbar-pct">90%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-cyan"></div></div>
+          </div>
+          <div class="sbar-item" data-pct="88">
+            <div class="sbar-label"><span>Python & FastAPI</span><span class="sbar-pct">88%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-green"></div></div>
+          </div>
+          <div class="sbar-item" data-pct="85">
+            <div class="sbar-label"><span>Data Science & ML</span><span class="sbar-pct">85%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-blue"></div></div>
+          </div>
+          <div class="sbar-item" data-pct="83">
+            <div class="sbar-label"><span>AWS Cloud & MLOps</span><span class="sbar-pct">83%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-amber"></div></div>
+          </div>
+          <div class="sbar-item" data-pct="80">
+            <div class="sbar-label"><span>Computer Vision</span><span class="sbar-pct">80%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-pink"></div></div>
+          </div>
+          <div class="sbar-item" data-pct="78">
+            <div class="sbar-label"><span>NLP Research</span><span class="sbar-pct">78%</span></div>
+            <div class="sbar-track"><div class="sbar-fill c-purple"></div></div>
+          </div>
         </div>
-        <div class="skill-row-body">
-          <div class="skill-pills">
-            <span class="skill-pill">CrewAI</span><span class="skill-pill">AutoGen</span><span class="skill-pill">LangGraph</span><span class="skill-pill">Agno</span><span class="skill-pill">PydanticAI</span><span class="skill-pill">Haystack</span><span class="skill-pill">Tool-Calling</span><span class="skill-pill">Semantic Routing</span><span class="skill-pill">HITL</span><span class="skill-pill">Ragas</span><span class="skill-pill">TruLens</span>
-          </div>
+
+        <!-- Mini donut: domain split -->
+        <div class="sbp-title" style="margin-top:28px">Domain Focus</div>
+        <div class="domain-donut-wrap">
+          <canvas id="domainDonut"></canvas>
+          <div class="domain-legend" id="domainLegend"></div>
         </div>
       </div>
 
-      <div class="skill-row" data-cat="llm">
-        <div class="skill-row-header">
-          <div class="skill-row-icon"><i class="fa-solid fa-brain"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-title">LLMs & Model Engineering</div>
-            <div class="skill-row-count">12 technologies</div>
+      <!-- Right: accordion tech stack -->
+      <div class="skills-accordion-panel">
+        <div class="sbp-title">Technology Stack</div>
+        <div class="skills-layout">
+
+          <div class="skill-row open" data-cat="genai">
+            <div class="skill-row-header">
+              <div class="skill-row-icon"><i class="fa-solid fa-robot"></i></div>
+              <div class="skill-row-info">
+                <div class="skill-row-title">GenAI & Agentic Frameworks</div>
+                <div class="skill-row-count">11 technologies</div>
+              </div>
+              <div class="skill-row-accent"></div>
+              <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+            </div>
+            <div class="skill-row-body">
+              <div class="skill-pills">
+                <span class="skill-pill">CrewAI</span><span class="skill-pill">AutoGen</span><span class="skill-pill">LangGraph</span><span class="skill-pill">Agno</span><span class="skill-pill">PydanticAI</span><span class="skill-pill">Haystack</span><span class="skill-pill">Tool-Calling</span><span class="skill-pill">Semantic Routing</span><span class="skill-pill">HITL</span><span class="skill-pill">Ragas</span><span class="skill-pill">TruLens</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-row-accent"></div>
-          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
-        </div>
-        <div class="skill-row-body">
-          <div class="skill-pills">
-            <span class="skill-pill">AWS Bedrock</span><span class="skill-pill">Llama 3.2</span><span class="skill-pill">GPT-4o</span><span class="skill-pill">PEFT</span><span class="skill-pill">QLoRA</span><span class="skill-pill">Unsloth</span><span class="skill-pill">DPO/RLHF</span><span class="skill-pill">DeepSpeed</span><span class="skill-pill">FSDP</span><span class="skill-pill">GGUF</span><span class="skill-pill">AWQ</span><span class="skill-pill">GPTQ</span>
+
+          <div class="skill-row" data-cat="llm">
+            <div class="skill-row-header">
+              <div class="skill-row-icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="skill-row-info">
+                <div class="skill-row-title">LLMs & Model Engineering</div>
+                <div class="skill-row-count">12 technologies</div>
+              </div>
+              <div class="skill-row-accent"></div>
+              <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+            </div>
+            <div class="skill-row-body">
+              <div class="skill-pills">
+                <span class="skill-pill">AWS Bedrock</span><span class="skill-pill">Llama 3.2</span><span class="skill-pill">GPT-4o</span><span class="skill-pill">PEFT</span><span class="skill-pill">QLoRA</span><span class="skill-pill">Unsloth</span><span class="skill-pill">DPO/RLHF</span><span class="skill-pill">DeepSpeed</span><span class="skill-pill">FSDP</span><span class="skill-pill">GGUF</span><span class="skill-pill">AWQ</span><span class="skill-pill">GPTQ</span>
+              </div>
+            </div>
           </div>
+
+          <div class="skill-row" data-cat="ml">
+            <div class="skill-row-header">
+              <div class="skill-row-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="skill-row-info">
+                <div class="skill-row-title">Data Science & Advanced ML</div>
+                <div class="skill-row-count">9 technologies</div>
+              </div>
+              <div class="skill-row-accent"></div>
+              <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+            </div>
+            <div class="skill-row-body">
+              <div class="skill-pills">
+                <span class="skill-pill">PyTorch</span><span class="skill-pill">Scikit-Learn</span><span class="skill-pill">RL (PPO, DQN)</span><span class="skill-pill">Time-Series</span><span class="skill-pill">XGBoost</span><span class="skill-pill">Random Forest</span><span class="skill-pill">Siamese Networks</span><span class="skill-pill">AutoML</span><span class="skill-pill">Quantum-Motivated Algorithms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-row" data-cat="vision">
+            <div class="skill-row-header">
+              <div class="skill-row-icon"><i class="fa-solid fa-eye"></i></div>
+              <div class="skill-row-info">
+                <div class="skill-row-title">Vision & Multimodal AI</div>
+                <div class="skill-row-count">8 technologies</div>
+              </div>
+              <div class="skill-row-accent"></div>
+              <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+            </div>
+            <div class="skill-row-body">
+              <div class="skill-pills">
+                <span class="skill-pill">Multimodal RAG</span><span class="skill-pill">OpenCV</span><span class="skill-pill">AWS Textract</span><span class="skill-pill">Document Intelligence</span><span class="skill-pill">Whisper (ASR)</span><span class="skill-pill">ElevenLabs (TTS)</span><span class="skill-pill">CLIP</span><span class="skill-pill">Image & Audio Processing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-row" data-cat="mlops">
+            <div class="skill-row-header">
+              <div class="skill-row-icon"><i class="fa-brands fa-aws"></i></div>
+              <div class="skill-row-info">
+                <div class="skill-row-title">MLOps, Cloud & Backend</div>
+                <div class="skill-row-count">11 technologies</div>
+              </div>
+              <div class="skill-row-accent"></div>
+              <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+            </div>
+            <div class="skill-row-body">
+              <div class="skill-pills">
+                <span class="skill-pill">Python</span><span class="skill-pill">AWS SageMaker</span><span class="skill-pill">AWS Lambda</span><span class="skill-pill">AWS EC2</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">CI/CD</span><span class="skill-pill">FastAPI</span><span class="skill-pill">Flask</span><span class="skill-pill">JWT/RBAC</span><span class="skill-pill">Optuna</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-row" data-cat="data">
+            <div class="skill-row-header">
+              <div class="skill-row-icon"><i class="fa-solid fa-database"></i></div>
+              <div class="skill-row-info">
+                <div class="skill-row-title">Data Infrastructure & Vector DBs</div>
+                <div class="skill-row-count">11 technologies</div>
+              </div>
+              <div class="skill-row-accent"></div>
+              <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
+            </div>
+            <div class="skill-row-body">
+              <div class="skill-pills">
+                <span class="skill-pill">Pinecone</span><span class="skill-pill">Milvus</span><span class="skill-pill">Weaviate</span><span class="skill-pill">Chroma</span><span class="skill-pill">FAISS</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Spark</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">Parquet</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <div class="skill-row" data-cat="ml">
-        <div class="skill-row-header">
-          <div class="skill-row-icon"><i class="fa-solid fa-chart-line"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-title">Data Science & Advanced ML</div>
-            <div class="skill-row-count">9 technologies</div>
-          </div>
-          <div class="skill-row-accent"></div>
-          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
-        </div>
-        <div class="skill-row-body">
-          <div class="skill-pills">
-            <span class="skill-pill">PyTorch</span><span class="skill-pill">Scikit-Learn</span><span class="skill-pill">RL (PPO, DQN)</span><span class="skill-pill">Time-Series</span><span class="skill-pill">XGBoost</span><span class="skill-pill">Random Forest</span><span class="skill-pill">Siamese Networks</span><span class="skill-pill">AutoML</span><span class="skill-pill">Quantum-Motivated Algorithms</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-row" data-cat="vision">
-        <div class="skill-row-header">
-          <div class="skill-row-icon"><i class="fa-solid fa-eye"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-title">Vision & Multimodal AI</div>
-            <div class="skill-row-count">8 technologies</div>
-          </div>
-          <div class="skill-row-accent"></div>
-          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
-        </div>
-        <div class="skill-row-body">
-          <div class="skill-pills">
-            <span class="skill-pill">Multimodal RAG</span><span class="skill-pill">OpenCV</span><span class="skill-pill">AWS Textract</span><span class="skill-pill">Document Intelligence</span><span class="skill-pill">Whisper (ASR)</span><span class="skill-pill">ElevenLabs (TTS)</span><span class="skill-pill">CLIP</span><span class="skill-pill">Image & Audio Processing</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-row" data-cat="mlops">
-        <div class="skill-row-header">
-          <div class="skill-row-icon"><i class="fa-brands fa-aws"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-title">MLOps, Cloud & Backend</div>
-            <div class="skill-row-count">11 technologies</div>
-          </div>
-          <div class="skill-row-accent"></div>
-          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
-        </div>
-        <div class="skill-row-body">
-          <div class="skill-pills">
-            <span class="skill-pill">Python</span><span class="skill-pill">AWS SageMaker</span><span class="skill-pill">AWS Lambda</span><span class="skill-pill">AWS EC2</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">CI/CD</span><span class="skill-pill">FastAPI</span><span class="skill-pill">Flask</span><span class="skill-pill">JWT/RBAC</span><span class="skill-pill">Optuna</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-row" data-cat="data">
-        <div class="skill-row-header">
-          <div class="skill-row-icon"><i class="fa-solid fa-database"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-title">Data Infrastructure & Vector DBs</div>
-            <div class="skill-row-count">11 technologies</div>
-          </div>
-          <div class="skill-row-accent"></div>
-          <i class="fa-solid fa-chevron-down skill-row-chevron"></i>
-        </div>
-        <div class="skill-row-body">
-          <div class="skill-pills">
-            <span class="skill-pill">Pinecone</span><span class="skill-pill">Milvus</span><span class="skill-pill">Weaviate</span><span class="skill-pill">Chroma</span><span class="skill-pill">FAISS</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Spark</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">Parquet</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -261,92 +347,170 @@
     <h2 class="section-title">Work Experience</h2>
     <p class="section-desc">5+ years across industry research, enterprise AI, and academia.</p>
 
-    <div class="timeline">
+    <!-- Journey stats bar -->
+    <div class="journey-stats">
+      <div class="js-item"><span class="js-num">5+</span><span class="js-lbl">Years</span></div>
+      <div class="js-divider"></div>
+      <div class="js-item"><span class="js-num">5</span><span class="js-lbl">Roles</span></div>
+      <div class="js-divider"></div>
+      <div class="js-item"><span class="js-num">4</span><span class="js-lbl">Companies</span></div>
+      <div class="js-divider"></div>
+      <div class="js-item"><span class="js-num">2020</span><span class="js-lbl">Started</span></div>
+      <div class="js-divider"></div>
+      <div class="js-item"><span class="js-num" style="color:var(--green)">Now</span><span class="js-lbl">Present</span></div>
+    </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Associate Data Scientist</div>
-              <div class="tl-company"><i class="fa-solid fa-building"></i> Hexaware Technologies <span class="tl-loc">· Chennai, India</span></div>
+    <!-- Career path timeline -->
+    <div class="career-path" id="careerPath">
+
+      <!-- Animated vertical line -->
+      <div class="cp-line"><div class="cp-line-fill" id="cpLineFill"></div></div>
+
+      <!-- Node 1 -->
+      <div class="cp-node" data-index="0">
+        <div class="cp-node-dot" style="--nc:#4f9eff">
+          <div class="cp-node-ring"></div>
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <div class="cp-card active" data-color="blue">
+          <div class="cp-card-header" onclick="toggleCpCard(this)">
+            <div class="cp-card-left">
+              <div class="cp-role">Associate Data Scientist</div>
+              <div class="cp-company"><span style="color:var(--blue)">Hexaware Technologies</span> <span class="cp-loc">· Chennai, India</span></div>
+              <div class="cp-tags">
+                <span>Agno</span><span>Multi-Agent</span><span>RAG</span><span>LangGraph</span><span>HITL</span>
+              </div>
             </div>
-            <span class="tl-date">Mar 2025 – Present</span>
+            <div class="cp-card-right">
+              <span class="cp-date-badge" style="--dc:var(--blue);--dca:rgba(79,158,255,0.15)">Mar 2025 – Present</span>
+              <span class="cp-current-badge">● Current</span>
+              <i class="fa-solid fa-chevron-down cp-chevron open"></i>
+            </div>
           </div>
-          <ul class="tl-list">
-            <li><strong>Autonomous Fraud Detection:</strong> Spearheading real-time fraud detection using stateful multi-agent systems via the Agno framework with advanced tool-calling for complex transaction analysis.</li>
-            <li><strong>Advanced RAG Pipelines:</strong> Engineering a multi-agent RAG pipeline for "Smart Tutor" using vector databases and semantic routing to deliver personalized content while minimizing hallucinations.</li>
-            <li><strong>Enterprise Automation:</strong> Designing agentic workflows with LangChain and LangGraph to automate reporting with Human-in-the-Loop (HITL) mechanisms, reducing operational overhead.</li>
-          </ul>
+          <div class="cp-card-body open">
+            <ul class="cp-bullets">
+              <li><strong>Autonomous Fraud Detection:</strong> Spearheading real-time fraud detection using stateful multi-agent systems via the Agno framework with advanced tool-calling for complex transaction analysis.</li>
+              <li><strong>Advanced RAG Pipelines:</strong> Engineering a multi-agent RAG pipeline for "Smart Tutor" using vector databases and semantic routing to deliver personalized content while minimizing hallucinations.</li>
+              <li><strong>Enterprise Automation:</strong> Designing agentic workflows with LangChain and LangGraph to automate reporting with Human-in-the-Loop (HITL) mechanisms, reducing operational overhead.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Research Assistant</div>
-              <div class="tl-company"><i class="fa-solid fa-car"></i> Volvo Group <span class="tl-loc">· Bangalore, India</span></div>
+      <!-- Node 2 -->
+      <div class="cp-node" data-index="1">
+        <div class="cp-node-dot" style="--nc:#a78bfa">
+          <div class="cp-node-ring"></div>
+          <i class="fa-solid fa-car"></i>
+        </div>
+        <div class="cp-card" data-color="purple">
+          <div class="cp-card-header" onclick="toggleCpCard(this)">
+            <div class="cp-card-left">
+              <div class="cp-role">Research Assistant</div>
+              <div class="cp-company"><span style="color:var(--purple)">Volvo Group</span> <span class="cp-loc">· Bangalore, India</span></div>
+              <div class="cp-tags">
+                <span>Edge AI</span><span>GGUF/AWQ</span><span>Computer Vision</span><span>CNN</span>
+              </div>
             </div>
-            <span class="tl-date">Jun 2024 – Mar 2025</span>
+            <div class="cp-card-right">
+              <span class="cp-date-badge" style="--dc:var(--purple);--dca:rgba(167,139,250,0.15)">Jun 2024 – Mar 2025</span>
+              <i class="fa-solid fa-chevron-down cp-chevron"></i>
+            </div>
           </div>
-          <ul class="tl-list">
-            <li><strong>Edge GenAI & Quantization:</strong> Researched lightweight LLMs for on-device inference using GGUF/AWQ quantization to reduce memory footprint and latency on vehicular hardware.</li>
-            <li><strong>Computer Vision Diagnostics:</strong> Deployed an optimized CNN pipeline for real-time component recognition within the Vehicle Configuration Manager (VCM) to automate visual inspections.</li>
-          </ul>
+          <div class="cp-card-body">
+            <ul class="cp-bullets">
+              <li><strong>Edge GenAI &amp; Quantization:</strong> Researched lightweight LLMs for on-device inference using GGUF/AWQ quantization to reduce memory footprint and latency on vehicular hardware.</li>
+              <li><strong>Computer Vision Diagnostics:</strong> Deployed an optimized CNN pipeline for real-time component recognition within the Vehicle Configuration Manager (VCM) to automate visual inspections.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Data Science Researcher (PhD Scholar)</div>
-              <div class="tl-company"><i class="fa-solid fa-university"></i> SRM University AP <span class="tl-loc">· Amaravati, India</span></div>
+      <!-- Node 3 -->
+      <div class="cp-node" data-index="2">
+        <div class="cp-node-dot" style="--nc:#22d3ee">
+          <div class="cp-node-ring"></div>
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <div class="cp-card" data-color="cyan">
+          <div class="cp-card-header" onclick="toggleCpCard(this)">
+            <div class="cp-card-left">
+              <div class="cp-role">Data Science Researcher (PhD Scholar)</div>
+              <div class="cp-company"><span style="color:var(--cyan)">SRM University AP</span> <span class="cp-loc">· Amaravati, India</span></div>
+              <div class="cp-tags">
+                <span>RAG</span><span>FastAPI</span><span>mT5</span><span>NLP</span><span>Quantum AI</span><span>Patents</span>
+              </div>
             </div>
-            <span class="tl-date">Sep 2021 – Jul 2024</span>
+            <div class="cp-card-right">
+              <span class="cp-date-badge" style="--dc:var(--cyan);--dca:rgba(34,211,238,0.15)">Sep 2021 – Jul 2024</span>
+              <i class="fa-solid fa-chevron-down cp-chevron"></i>
+            </div>
           </div>
-          <ul class="tl-list">
-            <li><strong>Healthcare AI:</strong> Architected a secure RAG chatbot for SRM Global Hospital to retrieve medical protocols while ensuring strict data privacy and proprietary data embedding.</li>
-            <li><strong>Audio Intelligence:</strong> Engineered a MoM automation API using FastAPI, STT, and speaker diarization to autonomously extract abstractive summaries and action items from recordings.</li>
-            <li><strong>Multilingual NLP:</strong> Developed MATSFT and MMSFT frameworks by fine-tuning mT5 for low-resource Indian languages, resulting in multiple high-impact journal publications.</li>
-            <li><strong>Quantum AI & IP:</strong> Architected quantum-motivated summarization processors for data compression, leading to multiple Indian Patents including 1 Granted Patent.</li>
-          </ul>
+          <div class="cp-card-body">
+            <ul class="cp-bullets">
+              <li><strong>Healthcare AI:</strong> Architected a secure RAG chatbot for SRM Global Hospital to retrieve medical protocols while ensuring strict data privacy and proprietary data embedding.</li>
+              <li><strong>Audio Intelligence:</strong> Engineered a MoM automation API using FastAPI, STT, and speaker diarization to autonomously extract abstractive summaries and action items from recordings.</li>
+              <li><strong>Multilingual NLP:</strong> Developed MATSFT and MMSFT frameworks by fine-tuning mT5 for low-resource Indian languages, resulting in multiple high-impact journal publications.</li>
+              <li><strong>Quantum AI &amp; IP:</strong> Architected quantum-motivated summarization processors for data compression, leading to multiple Indian Patents including 1 Granted Patent.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Trainee Engineer (ML Research)</div>
-              <div class="tl-company"><i class="fa-solid fa-industry"></i> Tychee Innovations <span class="tl-loc">· Andhra Pradesh, India</span></div>
+      <!-- Node 4 -->
+      <div class="cp-node" data-index="3">
+        <div class="cp-node-dot" style="--nc:#fbbf24">
+          <div class="cp-node-ring"></div>
+          <i class="fa-solid fa-industry"></i>
+        </div>
+        <div class="cp-card" data-color="amber">
+          <div class="cp-card-header" onclick="toggleCpCard(this)">
+            <div class="cp-card-left">
+              <div class="cp-role">Trainee Engineer (ML Research)</div>
+              <div class="cp-company"><span style="color:var(--amber)">Tychee Innovations</span> <span class="cp-loc">· Andhra Pradesh, India</span></div>
+              <div class="cp-tags">
+                <span>Object Detection</span><span>ML</span><span>Healthcare AI</span><span>Predictive Analytics</span>
+              </div>
             </div>
-            <span class="tl-date">Aug 2020 – Jul 2021</span>
+            <div class="cp-card-right">
+              <span class="cp-date-badge" style="--dc:var(--amber);--dca:rgba(251,191,36,0.15)">Aug 2020 – Jul 2021</span>
+              <i class="fa-solid fa-chevron-down cp-chevron"></i>
+            </div>
           </div>
-          <ul class="tl-list">
-            <li><strong>Industrial Safety Vision:</strong> Deployed real-time object detection to monitor hazardous machinery, triggering emergency stops via spatial tracking of hand proximity to danger zones.</li>
-            <li><strong>Predictive Analytics:</strong> Developed ML models to forecast patient outcomes and translate clinical data into actionable insights for data-driven healthcare decisions.</li>
-          </ul>
+          <div class="cp-card-body">
+            <ul class="cp-bullets">
+              <li><strong>Industrial Safety Vision:</strong> Deployed real-time object detection to monitor hazardous machinery, triggering emergency stops via spatial tracking of hand proximity to danger zones.</li>
+              <li><strong>Predictive Analytics:</strong> Developed ML models to forecast patient outcomes and translate clinical data into actionable insights for data-driven healthcare decisions.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Assistant Professor</div>
-              <div class="tl-company"><i class="fa-solid fa-chalkboard-user"></i> Dhanekula Engineering College <span class="tl-loc">· Andhra Pradesh, India</span></div>
+      <!-- Node 5 -->
+      <div class="cp-node" data-index="4">
+        <div class="cp-node-dot" style="--nc:#34d399">
+          <div class="cp-node-ring"></div>
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div class="cp-card" data-color="green">
+          <div class="cp-card-header" onclick="toggleCpCard(this)">
+            <div class="cp-card-left">
+              <div class="cp-role">Assistant Professor</div>
+              <div class="cp-company"><span style="color:var(--green)">Dhanekula Engineering College</span> <span class="cp-loc">· Andhra Pradesh, India</span></div>
+              <div class="cp-tags">
+                <span>Python</span><span>DSA</span><span>Mentorship</span><span>Teaching</span>
+              </div>
             </div>
-            <span class="tl-date">Oct 2020 – Aug 2021</span>
+            <div class="cp-card-right">
+              <span class="cp-date-badge" style="--dc:var(--green);--dca:rgba(52,211,153,0.15)">Oct 2020 – Aug 2021</span>
+              <i class="fa-solid fa-chevron-down cp-chevron"></i>
+            </div>
           </div>
-          <ul class="tl-list">
-            <li><strong>Software Mentorship:</strong> Instructed Data Structures, Algorithms, and Python, mentoring students in software engineering best practices and technical problem-solving.</li>
-          </ul>
+          <div class="cp-card-body">
+            <ul class="cp-bullets">
+              <li><strong>Software Mentorship:</strong> Instructed Data Structures, Algorithms, and Python, mentoring students in software engineering best practices and technical problem-solving.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -357,7 +521,29 @@
   <section id="projects" class="section reveal">
     <div class="section-label"><span>Portfolio</span></div>
     <h2 class="section-title">Key Projects</h2>
-    <p class="section-desc">Enterprise-grade AI systems built end-to-end.</p>
+    <p class="section-desc">Enterprise-grade AI systems built end-to-end — spanning GenAI, fraud detection, computer vision, and healthcare.</p>
+
+    <!-- Projects analytics row -->
+    <div class="proj-analytics">
+      <div class="proj-chart-card">
+        <div class="proj-chart-title">Tech Stack Distribution</div>
+        <div class="proj-donut-wrap">
+          <canvas id="projTechDonut"></canvas>
+          <div class="proj-donut-center"><span class="pdc-num">4</span><span class="pdc-sub">Projects</span></div>
+        </div>
+        <div class="proj-chart-legend" id="projTechLegend"></div>
+      </div>
+      <div class="proj-chart-card">
+        <div class="proj-chart-title">Domain Coverage</div>
+        <canvas id="projDomainBar" style="max-height:160px"></canvas>
+      </div>
+      <div class="proj-chart-card">
+        <div class="proj-chart-title">AI Techniques Used</div>
+        <canvas id="projTechBar" style="max-height:160px"></canvas>
+      </div>
+    </div>
+
+    </div>
 
     <div class="projects-grid">
 
@@ -545,32 +731,58 @@
   <section id="research" class="section reveal">
     <div class="section-label"><span>Intellectual Property</span></div>
     <h2 class="section-title">Research & Patents</h2>
-    <p class="section-desc">11 patents filed across AI, NLP, and healthcare — 3 granted. Published in Elsevier, IEEE & Springer.</p>
+    <p class="section-desc">11 patents filed · 3 granted · 7 peer-reviewed publications in Elsevier, IEEE & Springer.</p>
 
-    <div class="research-stats">
-      <div class="rs-stat s1">
-        <div class="rs-stat-icon"><i class="fa-solid fa-certificate"></i></div>
-        <div>
-          <div class="rs-stat-num">11</div>
-          <div class="rs-stat-lbl">Patents Filed</div>
+    <!-- ── Top: stat cards + two charts ── -->
+    <div class="rs-top-row">
+
+      <div class="rs-stat-col">
+        <div class="rs-stat s1">
+          <div class="rs-stat-icon"><i class="fa-solid fa-certificate"></i></div>
+          <div><div class="rs-stat-num" data-count="11">0</div><div class="rs-stat-lbl">Patents Filed</div></div>
+        </div>
+        <div class="rs-stat s2">
+          <div class="rs-stat-icon"><i class="fa-solid fa-check-double"></i></div>
+          <div><div class="rs-stat-num" data-count="3">0</div><div class="rs-stat-lbl">Granted</div></div>
+        </div>
+        <div class="rs-stat s3">
+          <div class="rs-stat-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div><div class="rs-stat-num" data-count="7">0</div><div class="rs-stat-lbl">Publications</div></div>
+        </div>
+        <div class="rs-stat s4">
+          <div class="rs-stat-icon"><i class="fa-solid fa-calendar"></i></div>
+          <div><div class="rs-stat-num">2022</div><div class="rs-stat-lbl">First Patent</div></div>
         </div>
       </div>
-      <div class="rs-stat s2">
-        <div class="rs-stat-icon"><i class="fa-solid fa-check-double"></i></div>
-        <div>
-          <div class="rs-stat-num">3</div>
-          <div class="rs-stat-lbl">Granted</div>
+
+      <!-- Patent status donut -->
+      <div class="rs-chart-card">
+        <div class="rs-chart-title">Patent Status</div>
+        <div class="rs-chart-wrap">
+          <canvas id="patentStatusChart"></canvas>
+          <div class="rs-donut-center">
+            <span class="rs-dc-num">11</span>
+            <span class="rs-dc-sub">Total</span>
+          </div>
         </div>
+        <div class="rs-chart-legend" id="patentStatusLegend"></div>
       </div>
-      <div class="rs-stat s3">
-        <div class="rs-stat-icon"><i class="fa-solid fa-book-open"></i></div>
-        <div>
-          <div class="rs-stat-num">7</div>
-          <div class="rs-stat-lbl">Publications</div>
-        </div>
+
+      <!-- Publications by venue bar chart -->
+      <div class="rs-chart-card">
+        <div class="rs-chart-title">Publications by Venue</div>
+        <canvas id="pubVenueChart" style="max-height:180px"></canvas>
       </div>
+
+      <!-- Patents by year bar chart -->
+      <div class="rs-chart-card">
+        <div class="rs-chart-title">Patents by Year</div>
+        <canvas id="patentYearChart" style="max-height:180px"></canvas>
+      </div>
+
     </div>
 
+    <!-- ── Tabs: Patents + Publications ── -->
     <div class="tabs-wrap">
       <div class="tabs-nav">
         <button class="tab-btn active" data-tab="tab-patents">
@@ -586,67 +798,73 @@
       <div id="tab-patents" class="tab-pane active">
         <div class="patent-grid">
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="Education AI">
             <div class="patent-top">
               <div class="patent-title">System and a method for automated exam evaluation and personalized learning feedback</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202541018210</span>
               <span class="patent-year">2025</span>
+              <span class="patent-domain">Education AI</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="LLM">
             <div class="patent-top">
               <div class="patent-title">A System and a Method for Managing API Calls in A Large Language Model</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202441096836</span>
               <span class="patent-year">2024</span>
+              <span class="patent-domain">LLM</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="Healthcare">
             <div class="patent-top">
               <div class="patent-title">A System and a Method for Healthcare Data Processing and Decision Support</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202441076761</span>
               <span class="patent-year">2024</span>
+              <span class="patent-domain">Healthcare</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="NLP">
             <div class="patent-top">
               <div class="patent-title">System and method for multilingual fake news detection in multimodal information</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202441030030</span>
               <span class="patent-year">2024</span>
+              <span class="patent-domain">NLP</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="Healthcare">
             <div class="patent-top">
               <div class="patent-title">A Healthcare Summarization System and A Method Thereof</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202441005845</span>
               <span class="patent-year">2024</span>
+              <span class="patent-domain">Healthcare</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="Education AI">
             <div class="patent-top">
               <div class="patent-title">A System and a Method for Personalized E-Content Generation Based on Student Performance</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202441003347</span>
               <span class="patent-year">2024</span>
+              <span class="patent-domain">Education AI</span>
             </div>
           </div>
 
-          <div class="patent-card is-granted">
+          <div class="patent-card is-granted" data-domain="NLP">
             <div class="patent-top">
               <div class="patent-title">System and method for deriving multilingual meeting minutes</div>
               <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span>
@@ -655,10 +873,11 @@
               <span class="patent-no">202441001022</span>
               <span class="patent-grant-no">Grant: 581292</span>
               <span class="patent-year">2024</span>
+              <span class="patent-domain">NLP</span>
             </div>
           </div>
 
-          <div class="patent-card is-granted">
+          <div class="patent-card is-granted" data-domain="Multimodal AI">
             <div class="patent-top">
               <div class="patent-title">System and method for multimodal multilingual input summarization using quantum motivated processors</div>
               <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span>
@@ -667,20 +886,22 @@
               <span class="patent-no">202341005519</span>
               <span class="patent-grant-no">Grant: 66614</span>
               <span class="patent-year">2023</span>
+              <span class="patent-domain">Multimodal AI</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="FinTech">
             <div class="patent-top">
               <div class="patent-title">A System and A Method for Generating Trading Coupons</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202341007665</span>
               <span class="patent-year">2023</span>
+              <span class="patent-domain">FinTech</span>
             </div>
           </div>
 
-          <div class="patent-card is-granted">
+          <div class="patent-card is-granted" data-domain="Engineering">
             <div class="patent-top">
               <div class="patent-title">A System and A Method for Prediction of The Strength of Concrete</div>
               <span class="badge-granted"><i class="fa-solid fa-check"></i> Granted</span>
@@ -689,16 +910,18 @@
               <span class="patent-no">202341007257</span>
               <span class="patent-grant-no">Grant: 582851</span>
               <span class="patent-year">2023</span>
+              <span class="patent-domain">Engineering</span>
             </div>
           </div>
 
-          <div class="patent-card">
+          <div class="patent-card" data-domain="Multimodal AI">
             <div class="patent-top">
               <div class="patent-title">A System and Method for Performing Multilingual Multimodal Summarization</div>
             </div>
             <div class="patent-meta">
               <span class="patent-no">202241073648</span>
               <span class="patent-year">2022</span>
+              <span class="patent-domain">Multimodal AI</span>
             </div>
           </div>
 
@@ -715,6 +938,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">Alexandria Engineering Journal · Elsevier</span>
                 <span class="pub-year-badge">2025</span>
+                <span class="pub-type-badge journal">Journal</span>
               </div>
               <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.1016/j.aej.2025.04.031" target="_blank" class="doi-link">10.1016/j.aej.2025.04.031 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -728,6 +952,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">Computer Methods and Programs in Biomedicine · Elsevier</span>
                 <span class="pub-year-badge">2024</span>
+                <span class="pub-type-badge journal">Journal</span>
               </div>
               <div class="pub-authors">Abdul, A., <strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.1016/j.cmpb.2024.108051" target="_blank" class="doi-link">10.1016/j.cmpb.2024.108051 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -741,6 +966,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">IEEE Access</span>
                 <span class="pub-year-badge">2024</span>
+                <span class="pub-type-badge ieee">IEEE</span>
               </div>
               <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.1109/ACCESS.2024.3454382" target="_blank" class="doi-link">10.1109/ACCESS.2024.3454382 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -754,6 +980,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">Intl. Conference on Data Science and Applications · Springer</span>
                 <span class="pub-year-badge">2024</span>
+                <span class="pub-type-badge conf">Conference</span>
               </div>
               <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.1007/978-981-96-2724-0_5" target="_blank" class="doi-link">10.1007/978-981-96-2724-0_5 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -767,6 +994,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">FICTA · Springer</span>
                 <span class="pub-year-badge">2023</span>
+                <span class="pub-type-badge conf">Conference</span>
               </div>
               <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.1007/978-981-99-6702-5_15" target="_blank" class="doi-link">10.1007/978-981-99-6702-5_15 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -780,6 +1008,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">MAI 2022 · Springer</span>
                 <span class="pub-year-badge">2023</span>
+                <span class="pub-type-badge conf">Conference</span>
               </div>
               <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.1007/978-981-99-0189-0_46" target="_blank" class="doi-link">10.1007/978-981-99-0189-0_46 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -793,6 +1022,7 @@
               <div class="pub-venue">
                 <span class="pub-journal">IJRTE</span>
                 <span class="pub-year-badge">2020</span>
+                <span class="pub-type-badge journal">Journal</span>
               </div>
               <div class="pub-authors"><strong>Phani, S.</strong>, et al.</div>
               <a href="https://doi.org/10.35940/ijrte.f7415.059120" target="_blank" class="doi-link">10.35940/ijrte.f7415.059120 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -803,43 +1033,117 @@
       </div>
     </div>
   </section>
-
   <!-- ── EDUCATION ──────────────────────────────────────────── -->
   <section id="education" class="section reveal">
     <div class="section-label"><span>Academic Background</span></div>
     <h2 class="section-title">Education</h2>
-    <p class="section-desc">Strong academic foundation from B.Tech through PhD.</p>
+    <p class="section-desc">A decade of academic excellence from SSC through PhD.</p>
 
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-year">2021 – 2025</div>
-        <div class="edu-degree">Ph.D. — Computer Science & Engineering</div>
-        <div class="edu-inst">SRM University AP, Amaravati</div>
-        <span class="edu-score">CGPA: 9.25 / 10.0</span>
+    <div class="edu-path">
+      <!-- Animated horizontal line -->
+      <div class="edu-path-line">
+        <div class="edu-path-line-fill" id="eduLineFill"></div>
       </div>
-      <div class="edu-card">
-        <div class="edu-year">2018 – 2020</div>
-        <div class="edu-degree">M.Tech — Computer Science & Engineering</div>
-        <div class="edu-inst">KL University</div>
-        <span class="edu-score">CGPA: 8.5 / 10.0</span>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2014 – 2018</div>
-        <div class="edu-degree">B.Tech — Computer Science & Engineering</div>
-        <div class="edu-inst">JNTUK</div>
-        <span class="edu-score">81.0%</span>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2012 – 2014</div>
-        <div class="edu-degree">Intermediate (MPC)</div>
-        <div class="edu-inst">Board of Intermediate Education</div>
-        <span class="edu-score">91.70%</span>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2011 – 2012</div>
-        <div class="edu-degree">SSC — 10th Standard</div>
-        <div class="edu-inst">Board of Secondary Education</div>
-        <span class="edu-score">GPA: 9.3 / 10.0</span>
+
+      <!-- Steps -->
+      <div class="edu-steps">
+
+        <div class="edu-step" data-index="0">
+          <div class="edu-step-node" style="--ec:#4f9eff;--ecb:rgba(79,158,255,0.15)">
+            <div class="edu-step-ring"></div>
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <div class="edu-step-year">2021 – 2025</div>
+          <div class="edu-step-card" onclick="toggleEduCard(this)">
+            <div class="edu-step-icon" style="background:rgba(79,158,255,0.12);color:#4f9eff"><i class="fa-solid fa-microscope"></i></div>
+            <div class="edu-step-degree">Ph.D.</div>
+            <div class="edu-step-field">Computer Science &amp; Engineering</div>
+            <div class="edu-step-inst">SRM University AP</div>
+            <div class="edu-step-score" style="color:#4f9eff;border-color:rgba(79,158,255,0.3);background:rgba(79,158,255,0.1)">9.25 / 10.0</div>
+            <div class="edu-step-detail">
+              <div class="edu-detail-row"><i class="fa-solid fa-location-dot"></i> Amaravati, India</div>
+              <div class="edu-detail-row"><i class="fa-solid fa-certificate"></i> 11 Patents · 7 Publications</div>
+              <div class="edu-detail-row"><i class="fa-solid fa-flask"></i> Multilingual NLP, Quantum AI, RAG</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-step" data-index="1">
+          <div class="edu-step-node" style="--ec:#a78bfa;--ecb:rgba(167,139,250,0.15)">
+            <div class="edu-step-ring"></div>
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="edu-step-year">2018 – 2020</div>
+          <div class="edu-step-card" onclick="toggleEduCard(this)">
+            <div class="edu-step-icon" style="background:rgba(167,139,250,0.12);color:#a78bfa"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="edu-step-degree">M.Tech</div>
+            <div class="edu-step-field">Computer Science &amp; Engineering</div>
+            <div class="edu-step-inst">KL University</div>
+            <div class="edu-step-score" style="color:#a78bfa;border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.1)">8.5 / 10.0</div>
+            <div class="edu-step-detail">
+              <div class="edu-detail-row"><i class="fa-solid fa-location-dot"></i> Andhra Pradesh, India</div>
+              <div class="edu-detail-row"><i class="fa-solid fa-brain"></i> Advanced ML &amp; Deep Learning</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-step" data-index="2">
+          <div class="edu-step-node" style="--ec:#22d3ee;--ecb:rgba(34,211,238,0.15)">
+            <div class="edu-step-ring"></div>
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="edu-step-year">2014 – 2018</div>
+          <div class="edu-step-card" onclick="toggleEduCard(this)">
+            <div class="edu-step-icon" style="background:rgba(34,211,238,0.12);color:#22d3ee"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="edu-step-degree">B.Tech</div>
+            <div class="edu-step-field">Computer Science &amp; Engineering</div>
+            <div class="edu-step-inst">JNTUK</div>
+            <div class="edu-step-score" style="color:#22d3ee;border-color:rgba(34,211,238,0.3);background:rgba(34,211,238,0.1)">81.0%</div>
+            <div class="edu-step-detail">
+              <div class="edu-detail-row"><i class="fa-solid fa-location-dot"></i> Andhra Pradesh, India</div>
+              <div class="edu-detail-row"><i class="fa-solid fa-code"></i> CS Fundamentals, Algorithms, Networks</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-step" data-index="3">
+          <div class="edu-step-node" style="--ec:#fbbf24;--ecb:rgba(251,191,36,0.15)">
+            <div class="edu-step-ring"></div>
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="edu-step-year">2012 – 2014</div>
+          <div class="edu-step-card" onclick="toggleEduCard(this)">
+            <div class="edu-step-icon" style="background:rgba(251,191,36,0.12);color:#fbbf24"><i class="fa-solid fa-book"></i></div>
+            <div class="edu-step-degree">Intermediate</div>
+            <div class="edu-step-field">MPC</div>
+            <div class="edu-step-inst">Board of Intermediate Education</div>
+            <div class="edu-step-score" style="color:#fbbf24;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.1)">91.70%</div>
+            <div class="edu-step-detail">
+              <div class="edu-detail-row"><i class="fa-solid fa-location-dot"></i> Andhra Pradesh, India</div>
+              <div class="edu-detail-row"><i class="fa-solid fa-atom"></i> Maths, Physics, Chemistry</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-step" data-index="4">
+          <div class="edu-step-node" style="--ec:#34d399;--ecb:rgba(52,211,153,0.15)">
+            <div class="edu-step-ring"></div>
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <div class="edu-step-year">2011 – 2012</div>
+          <div class="edu-step-card" onclick="toggleEduCard(this)">
+            <div class="edu-step-icon" style="background:rgba(52,211,153,0.12);color:#34d399"><i class="fa-solid fa-school"></i></div>
+            <div class="edu-step-degree">SSC</div>
+            <div class="edu-step-field">10th Standard</div>
+            <div class="edu-step-inst">Board of Secondary Education</div>
+            <div class="edu-step-score" style="color:#34d399;border-color:rgba(52,211,153,0.3);background:rgba(52,211,153,0.1)">9.3 / 10.0</div>
+            <div class="edu-step-detail">
+              <div class="edu-detail-row"><i class="fa-solid fa-location-dot"></i> Andhra Pradesh, India</div>
+              <div class="edu-detail-row"><i class="fa-solid fa-star"></i> Academic Foundation</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -855,7 +1159,7 @@
         <i class="fa-solid fa-download"></i> Download PDF
       </a>
     </div>
-    <div class="resume-frame">
+    <div class="resume-viewer">
       <iframe
         src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/phanikumar96/Portfolio/main/Phani_Siginamsetty_ResumeV1.pdf&embedded=true"
         frameborder="0" allowfullscreen>
@@ -866,5 +1170,9 @@
 </main>
 
 <script src="script.js"></script>
+<!-- Theme toggle — always visible -->
+<button class="theme-toggle" id="themeToggle" title="Toggle light / dark mode" aria-label="Toggle theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
 </body>
 </html>
